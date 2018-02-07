@@ -1,0 +1,8 @@
+## ignore this file##
+*.meta
+
+## ignore ideal.client
+ideal-client/library
+ideal-client/local
+ideal-client/temp
+ideal-client/settings
