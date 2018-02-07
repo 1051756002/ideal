@@ -1,6 +1,6 @@
 let ideal = {};
 
-ideal.util = require('./util');
+ideal.util = require('../util/index');
 ideal.config = require('./config');
 
 window.ideal = ideal;

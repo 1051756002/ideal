@@ -1,0 +1,19 @@
+{
+	"name": "ideal-server",
+	"version": "0.0.1",
+	"description": "我所做的一切，只为成功！",
+	"author": "ideal",
+	"private": true,
+	"scripts": {
+		"start": "node main.js"
+	},
+	"dependencies": {
+		"protobufjs": "^6.8.4"
+	},
+	"devDependencies": {
+		"chalk": "^2.0.1"
+	},
+	"engines": {
+		"node": ">= 6.0.0"
+	}
+}

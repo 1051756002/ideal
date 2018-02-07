@@ -1,2 +1,4 @@
-let fs = require('fs');
+require('./core/ideal');
+// let server = require('./server/index');
 
+ideal.init();
