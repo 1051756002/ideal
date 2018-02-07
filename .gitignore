@@ -2,7 +2,7 @@
 *.meta
 
 ## ignore ideal.client
-ideal-client/library
-ideal-client/local/
+ideal-client/library/
+ideal-client/local/logs/
 ideal-client/temp/
 ideal-client/settings/
