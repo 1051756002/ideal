@@ -3,6 +3,6 @@
 
 ## ignore ideal.client
 ideal-client/library/
-ideal-client/local/logs/
+ideal-client/local/
 ideal-client/temp/
 ideal-client/settings/
