@@ -7,7 +7,8 @@ config.version = '0.0.1';
 // 服务器配置
 config.server = {
 	// 地址
-	address: '192.168.1.120',
+	// address: '192.168.1.120',
+	address: '192.168.199.195',
 	// 端口
 	port: 5555,
 	// 重连次数上限
