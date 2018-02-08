@@ -1,4 +1,5 @@
 require('./core/ideal');
-// let server = require('./server/index');
 
-ideal.init();
+ideal.init(function() {
+	util.log('%-green', '  ideal framework initialization end.');
+});

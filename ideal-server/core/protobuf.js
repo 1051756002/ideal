@@ -8,11 +8,11 @@ let loadNext = function(idx = 0, callback = null) {
 		return;
 	}
 
-	let file = 'Unnamed';
+	let fname = 'Unnamed';
 	let path = plist[idx];
 	let result = path.match(/\/([a-z|_|-]*)\.proto/i);
 	if (util.isDefine(result)) {
-		file = result[1];
+		fname = result[1];
 	};
 
 	protobufjs.load(path, function(err, root) {
@@ -20,8 +20,9 @@ let loadNext = function(idx = 0, callback = null) {
 			util.log(err);
 			return;
 		}
-		protobuf[file] = root;
-		util.logat('%-cyan', '  - loaded file: {1}, define as {2}', path, file);
+		protobuf[fname] = root;
+		util.logat('%-gray', '  - loaded file: {1}', path);
+		util.logat('%-gray', '    define as {1}', fname);
 		loadNext(idx + 1, callback);
 	});
 };
@@ -29,7 +30,7 @@ let loadNext = function(idx = 0, callback = null) {
 protobuf.init = function(callback) {
 	util.log('%-cyan', '  protobuf loaded start.');
 	loadNext(0, function() {
-		util.log('%-cyan', '  protobuf loaded complete.\n\n');
+		util.log('%-cyan', '  protobuf loaded complete.\n');
 		util.isDefine(callback) && callback();
 	});
 };

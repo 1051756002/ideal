@@ -98,7 +98,7 @@ connector.sendMsg = function(mainCmd, subCmd, bodyBuff) {
 		});
 	}
 
-	if (config.notlog_send.indexof(mainCmd) == -1) {
+	if (config.notlog_send.indexOf(mainCmd) == -1) {
 		util.log(util.format('%c发送: main={1}\tsub={2}\tbodyLen={3}', mainCmd, subCmd, bodyBuff ? bodyBuff.byteLength : 0), 'color:#0fe029');
 	}
 
@@ -237,7 +237,7 @@ let receiveMsg = function(buffer) {
 		let subCmd = msgCmd[3];
 		let bodyBuff = new Uint8Array(msgBody);
 
-		if (config.notlog_recv.indexof(mainCmd) == -1) {
+		if (config.notlog_recv.indexOf(mainCmd) == -1) {
 			util.log(util.format('%c接收: main={1}, sub={2}, bodyLen={3}', mainCmd, subCmd, bodyBuff ? bodyBuff.byteLength : 0), 'color:#ea681c');
 		}
 
