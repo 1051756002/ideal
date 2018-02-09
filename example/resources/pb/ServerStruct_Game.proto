@@ -1,0 +1,238 @@
+//服务器内部通讯结构定义
+
+/////////////////////////////////////////////////////客户端/////////////////////////////////////////////////////////////
+//_GT_
+//游戏登录
+//mainID: MDM_GR_LOGON               1
+//subID:  SUB_GR_LOGON_USERID        1
+message MMO_GT_Logon {
+  optional int32 wMBClientVersion = 1;    //客户端版本号
+  optional int32 wChannel = 2;            //渠道号
+  optional int32 wModelID = 3;            //游戏ID
+  optional int64 dwUserID = 4;            //用户ID
+  optional string szPassword = 5;         //密码
+  optional string szMachineName = 6;      //设备名称
+  optional int32 wSceneID = 7;            //目标场景id（1~99捕鱼 100~199球球）
+  optional string szAccount = 8;          //账号
+}
+
+//登录失败
+//mainID: MDM_GR_LOGON               1
+//subID:  SUB_GR_LOGON_FAILURE       101
+message MMO_GT_LogonFailed {
+  optional int32 lErrorCode = 1;          //错误代码
+  optional string szDescribeString = 2;   //描述
+}
+
+//系统消息
+//mainID: MDM_CM_SYSTEM               200
+//subID:  SUB_CM_SYSTEM_MESSAGE       1
+message MMO_GT_SystemMessage {
+  optional int32 wType = 1;               //类型（1普通消息 2弹出消息）
+  optional string szString = 2;           //描述
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+///
+////_U_  代表消息始于客户端_G_  代表消息始于网关  _C_ 代表消息始于协调 _S_ 代表消息始于场景（游戏）
+//1-1000 预留给网关消息 1001-2000 预留给网关消息 2001-3000 预留给协调消息 3001-4000 预留给场景消息
+//#define SUB_USER_START        0             //玩家消息 起始ID
+//#define SUB_GATE_START        1000            //网关消息 起始ID
+//#define SUB_CORR_START        2000            //协调消息 起始ID
+//#define SUB_SCENE_START       3000            //场景消息 起始ID
+//#define SUB_OTHER_START       10000           //其他消息 起始ID
+
+//
+//#define MDM_CS_MAIN_LOGIC     1000                  //主逻辑
+//#define MDM_CS_GAME_LOGIC     2000                  //游戏逻辑
+/////////////////////////////////////////////////////客户端////////////////////////////////////////////////////////////
+// SUB_U_SWITCH_SECNE     (SUB_USER_START+1)                  //用户切换场景
+message MMO_U_SwitchScene {
+  optional int32 wSceneID = 1;    //场景id
+}
+
+// SUB_U_QUIT_GAME        (SUB_USER_START+2)                  //用户退出游戏
+/////////////////////////////////////////////////////网关服务器////////////////////////////////////////////////////////////
+// SUB_G_USER_LOGIN      (SUB_GATE_START+1)                  //用户登入
+//用户登入
+message MMO_GT_UserLogin
+{
+  optional int32              dwUserID                      = 1;                                      //用户ID
+  optional int32              wSceneID                      = 2;                                      //场景ID
+  optional string             szMachineID                   = 3;                                      //机器标识
+  optional int32              cbDeviceType                  = 4;                                      //设备类型
+  optional int32              dwClientAddr                  = 5;                                      //连接地址
+  optional int32              isUnwelcome                   = 6;                                      //是否不受欢迎
+  optional int32              wChannel                      = 7;                                      //渠道号
+
+  optional bool               bAIUser                       = 10;                                     //是否机器人
+  optional int64              lScore                        = 11;                                     //用户分数
+  optional string             szNickName                    = 12;                                     //帐号昵称
+}
+
+// SUB_G_USER_DISCONNECT      (SUB_GATE_START+2)                  //用户断开
+//用户断开
+message MMO_GT_UserDisconnect
+{
+  optional int32              dwUserID                      = 1;                                      //用户ID
+}
+
+// SUB_G_USER_RECONNECT   (SUB_GATE_START+3)                  //用户重连
+//用户重连
+message MMO_GT_UserReconnect
+{
+  optional int32              dwUserID                      = 1;                                      //用户ID
+  optional int32              bSameMachineID                = 2;                                      //是否相同设备
+}
+
+//清理用户对象（跨服）
+//subID: SUB_C_G_CLEAR_USER      (SUB_CORR_START+4)                  //清理网关用户对象
+message MMO_GT_ClearUser {
+  optional int32              wTargetServerID               = 1;                                      //目标服务器ID
+  optional uint32             wTargetServerIP               = 2;                                      //目标服务器IP
+  optional int32              wTargetServerPort             = 3;                                      //目标服务器Port
+}
+//////////////////////////////////////////////////场景(游戏)服务器//////////////////////////////////////////////////////////
+//登录场景成功
+//主命令：MDM_CS_MAIN_LOGIC     1000                  //主逻辑
+//子命令：SUB_S_USER_LOGIN_SUCC   3001                  //用户登入成功
+message MMO_SN_LoginSucc {
+  optional int32              nCurSceneID = 1;                  //当前场景id
+  optional int32              wVersion = 2;                     //当前游戏版本
+}
+
+
+//SUB_S_USER_RECONNECT_SUCC (SUB_SCENE_START+4)                 //用户重连成功
+//用户重连成功
+message MMO_SN_ReconnectSucc
+{
+  optional int32              dwUserID                      = 1;                                      //用户ID
+  optional int32              bSameMachineID                = 2;                                      //是否相同设备
+  optional int32              nCurSceneID = 3;                  //当前场景id
+  optional int32              wVersion = 4;                     //当前游戏版本
+}
+
+//SUB_S_USER_RECONNECT_FAIL (SUB_SCENE_START+5)                 //用户重连失败
+//用户重连失败
+message MMO_SN_ReconnectFail
+{
+  optional int32              dwUserID                      = 1;                                      //用户ID
+  optional int32              bSameMachineID                = 2;                                      //是否相同设备
+}
+
+//SUB_S_USER_SWITCH_SCENE (SUB_SCENE_START+8)                 //用户切换场景
+
+//SUB_S_USER_SWITCH_SUCC (SUB_SCENE_START+9)                  //用户切换场景成功
+
+//SUB_S_USER_SWITCH_FAILED (SUB_SCENE_START+10)               //用户切换场景失败
+
+//系统消息
+//subID:  SUB_S_SYSTEM_MESSAGE    (SUB_SCENE_START+11)
+message MMO_SN_SystemMessage {
+  optional int32 wType = 1;       //消息类型（0普通 1维护）
+  optional string szString = 2;   //消息内容
+}
+
+//游戏退出结果
+//subID:  SUB_S_USER_QUIT_GAME    (SUB_SCENE_START+12)
+message MMO_SN_QuitGameResult {
+  optional int32 wType = 1;       //代码（0游戏退出成功 1等待退出中）
+}
+
+/////////////////////////////////////////////////////协调服务器/////////////////////////////////////////////////////////////
+//服务信息
+//主命令 MDM_CS_SERVICE_INFO     2                 //服务信息
+
+//房间信息
+// SUB_CS_C_SERVER_ONLINE    1                 //房间人数
+// SUB_CS_C_SERVER_MODIFY    2                 //房间修改
+
+
+
+//房间命令
+// SUB_CS_S_SERVER_INFO    110                 //房间信息
+// SUB_CS_S_SERVER_ONLINE    111                 //房间人数
+// SUB_CS_S_SERVER_INSERT    112                 //房间列表
+// SUB_CS_S_SERVER_MODIFY    113                 //房间修改
+// SUB_CS_S_SERVER_REMOVE    114                 //房间删除
+// SUB_CS_S_SERVER_FINISH    115                 //房间完成
+
+
+//////////////////////////////////////////////////////////////////////////////////
+
+//房间人数 传给协调
+message MMO_CS_C_ServerOnLine
+{
+  optional int32              wSceneID                      = 1;             //场景ID
+  optional int32              dwOnLineCount                 = 2;            //在线人数
+  optional int32              dwAndroidCount                = 3;           //机器人数
+}
+
+//房间人数 协调发送
+message MMO_CS_S_ServerOnLine
+{
+  optional int32              wServiceType                  = 1;           //服务类型
+  optional int32              wServerID                     = 2;              //房间标识
+  optional int32              wSceneID                      = 3;             //场景ID
+  optional int32              dwOnLineCount                 = 4;            //在线人数
+  optional int32              dwAndroidCount                = 5;           //机器人数
+}
+
+
+//房间删除 协调发送
+message MMO_CS_S_ServerRemove
+{
+  optional int32              wServiceType                  = 1;           //服务类型
+  optional int32              wServerID                     = 2;              //房间标识
+}
+
+//////////////////////////////////////////////////////////////////////////////////
+//用户汇总
+//主命令 MDM_CS_USER_COLLECT     3                 //用户汇总
+
+//用户状态
+// SUB_CS_C_USER_ENTER     1                 //用户进入
+// SUB_CS_C_USER_LEAVE     2                 //用户离开
+// SUB_CS_C_USER_FINISH    3                 //用户完成
+
+//用户状态
+// SUB_CS_S_COLLECT_REQUEST  100                 //汇总请求
+
+//////////////////////////////////////////////////////////////////////////////////
+
+//用户进入 传给协调
+message MMO_CS_C_UserEnterGate
+{
+  //用户信息
+  optional int32              dwUserID                      = 1;             //用户标识
+  optional int32              isAIUser                      = 2;             //机器人 
+  optional int32              isUnwelcome                   = 3;            //是否不受欢迎
+  optional int32              dwClientAddr                  = 4;           //连接地址 @
+}
+
+//用户离开 传给协调
+message MMO_CS_C_UserLeaveGate
+{
+  optional int32              dwUserID                      = 1;             //用户标识
+}
+
+//用户进入 传给协调
+message MMO_CS_C_UserEnterScene
+{
+  optional int32              dwUserID                      = 1;             //用户标识
+  optional int32              dwGameID                      = 2;             //游戏 I D
+  optional string             szNickName                    = 3;              //用户昵称
+  //辅助信息
+  optional int32              cbGender                      = 4;             //用户性别
+  optional int32              cbMemberOrder                 = 5;            //会员等级
+  optional int32              cbMasterOrder                 = 6;            //管理等级  
+  optional int32              wSceneID                      = 7;             //所在场景ID
+}
+
+//用户离开
+message MMO_CS_C_UserLeaveScene
+{
+  optional int32              dwUserID                      = 1;             //用户标识
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

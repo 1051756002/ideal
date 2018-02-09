@@ -1,0 +1,30 @@
+{
+  "ver": "1.0.0",
+  "uuid": "8c673ddd-be37-44db-9aed-f746490bb421",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "subMetas": {
+    "img_avarar_ii_ycs": {
+      "ver": "1.0.3",
+      "uuid": "f81a3bdd-16ce-4e9c-8628-7c1d9d265219",
+      "rawTextureUuid": "8c673ddd-be37-44db-9aed-f746490bb421",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": -0.5,
+      "offsetY": -1,
+      "trimX": 0,
+      "trimY": 2,
+      "width": 84,
+      "height": 84,
+      "rawWidth": 85,
+      "rawHeight": 86,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

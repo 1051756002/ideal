@@ -1,0 +1,164 @@
+message Snake_S_UserInfo {
+	optional	int32	id = 1;
+	optional	string	nick = 2;
+	optional	int64	stone = 3;
+	optional	int32	mapID = 4;
+}
+
+message Snake_S_CommonResult {
+	optional	bool	isSucc = 1;
+	optional	string	msg = 2;
+	optional	int32	code = 3;
+}
+
+message Snake_S_GameError {
+	optional	int32	code = 1;
+	optional	string	msg = 2;
+	optional	int32	level = 3;
+}
+
+message Snake_S_GameInfo {
+	optional	int32	part = 1;
+	optional	int32	mapWidth = 2;
+	optional	int32	mapHeight = 3;
+	repeated	Snake_S_SnakeInfo	snakes = 4;
+	repeated	Snake_S_FoodInfo	foods = 5;
+	optional	int32	frameRate = 6;
+	optional	int32	stepTime = 7;
+	optional	Snake_S_SnakeConfig	snakeConfig = 8;
+	optional	Snake_S_FoodConfig	foodConfig = 9;
+	optional	int64	foodRandomSeed = 10;
+}
+
+message Snake_S_SnakeConfig {
+	optional	int32	SPEED = 1;
+	optional	int32	ANGLE_SPEED = 2;
+	optional	int32	MIN_LENGTH = 3;
+	optional	int32	MAX_LENGTH = 4;
+	optional	int32	SCORE_LENGTH_RATIO = 5;
+	optional	int32	RADIUS = 6;
+	optional	int32	LAG = 7;
+}
+
+message Snake_S_FoodConfig {
+	optional	int32	MIN_RADIUS = 1;
+	optional	int32	MAX_RADIUS = 2;
+	optional	int32	SCORE_RADIUS_RATIO = 3;
+	repeated	int32	RANDOM_SKINS = 4;
+	repeated	int32	RANDOM_RATES = 5;
+}
+
+message Snake_S_GameStep {
+	optional	int32	id = 1;
+	repeated	Snake_S_GameFrame	frames = 2;
+	optional	int32	randomFoodNum = 3;
+	optional	int64	foodRandomSeed = 4;
+}
+
+message Snake_S_GameFrame {
+	repeated	Snake_S_SnakeInfo	snakes = 1;
+	repeated	Snake_S_FoodInfo	foods = 2;
+}
+
+message Snake_S_SnakeInfo {
+	optional	int32	id = 1;
+	optional	string	nick = 2;
+	optional	int32	skin = 3;
+	optional	int32	score = 4;
+	optional	int32	kills = 5;
+	optional	bool	isSpeedUp = 6;
+	optional	bool	hasShield = 7;
+	optional	bool	isDead = 8;
+	optional	int32	killerID = 9;
+	repeated	Snake_S_SnakeTrack	tracks = 10;
+	repeated	Snake_S_FoodInfo	foods = 11;
+	optional	int32	toDegree = 12;
+}
+
+message Snake_S_SnakeTrack {
+	optional	int32	degree = 1;
+	optional	fixed32	pos = 2;
+}
+
+message Snake_S_FoodInfo {
+	optional	int32	skin = 1;
+	optional	int32	score = 2;
+	optional	int32	degree = 3;
+	optional	fixed32	pos = 4;
+}
+
+message Snake_S_GameResult {
+	optional	int32	id = 1;
+	optional	int32	score = 2;
+	optional	int32	kills = 3;
+	optional	Snake_S_UserDepositSaveOrder	depositSaveOrder = 4;
+}
+
+message Snake_C_Enter {
+	optional	int32	mapID = 1;
+}
+
+message Snake_C_Control {
+	optional	int32	toDegree = 1;
+	optional	bool	isSpeedUp = 2;
+}
+
+message Snake_C_GameLog {
+	optional	string	remark = 1;
+}
+
+message Snake_S_UserDepositInfo {
+	optional	int64	stone = 1;
+	optional	int32	saveChance = 2;
+	optional	int64	drawLimit = 3;
+}
+
+message Snake_S_UserDepositSaveOrder {
+	optional	string	id = 1;
+	optional	int64	stone = 2;
+	optional	int32	status = 3;
+	optional	string	msg = 4;
+}
+
+message Snake_S_UserDepositSaveResult {
+	optional	bool	isSucc = 1;
+	optional	string	msg = 2;
+	optional	Snake_S_UserDepositSaveOrder	order = 3;
+}
+
+message Snake_S_UserDepositDrawResult {
+	optional	bool	isSucc = 1;
+	optional	string	msg = 2;
+	optional	int64	userStone = 3;
+}
+
+message Snake_C_UserDepositSave {
+	optional	string	orderID = 1;
+	optional	int32	type = 2;
+	optional	string	account = 3;
+	optional	string	password = 4;
+}
+
+message Snake_S_TaskInfo {
+	optional	int32	taskID = 1;
+	optional	string	content = 2;
+	optional	int32	opType = 3;
+	optional	string	opParam = 4;
+	optional	int32	needValue = 5;
+	optional	int32	currValue = 6;
+	optional	int32	status = 7;
+}
+
+message Snake_S_TaskInfoList {
+	repeated	Snake_S_TaskInfo	tasks = 1;
+}
+
+message Snake_C_TaskDraw {
+	optional	int32	taskID = 1;
+}
+
+message Snake_S_TaskDrawResult {
+	optional	bool	isSucc = 1;
+	optional	string	msg = 2;
+	optional	Snake_S_TaskInfo	task = 3;
+}

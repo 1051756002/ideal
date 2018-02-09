@@ -1,0 +1,51 @@
+//登录服务器
+
+//账号登录
+//mainID: MDM_MB_LOGON               100
+//subID:  SUB_MB_LOGON_ACCOUNTS      1
+message PB_MB_Logon {
+  optional string szAccount = 1;          //账号
+  optional string szPassword = 2;         //密码
+  optional int32 wClientVersion = 3;      //客户端版本号
+  optional int32 wChannel = 4;            //渠道号
+}
+
+//登录失败
+//mainID: MDM_MB_LOGON               100
+//subID:  SUB_MB_LOGON_FAILURE       501
+message PB_MB_LogonFailure {
+  optional int32 lResultCode = 1;         //错误代码
+  optional string szDescribeString = 2;   //错误描述
+}
+
+//登录成功
+//mainID: MDM_MB_LOGON               100
+//subID:  SUB_MB_LOGON_SUCCESS       500
+message PB_MB_LogonSuccess {
+  optional int64 dwUserID = 1;            //用户ID
+  optional string szValidCode = 2;        //验证码
+}
+
+//房间列表
+//mainID: MDM_MB_SERVER_LIST      101
+//subID:  SUB_MB_LIST_SERVER      101
+message PB_MB_ServerInfo {
+  optional int32 wServerPort = 1;         //端口
+  optional uint32 wServerIP = 2;          //服务器ip
+  optional int32 wServerID = 3;           //服务器ID
+}
+message PB_MB_GameServerList {
+  optional int32 wKindID = 1;             //游戏ID
+  optional int32 wServerType = 2;         //房间类型（登录\网关\场景\聊天）
+  repeated PB_MB_ServerInfo serverInfo = 3;//所有服务器信息
+}
+
+//房间列表完成
+//mainID: MDM_MB_SERVER_LIST      101
+//subID:  SUB_MB_LIST_FINISH      200
+message PB_MB_RoomListFinish {
+  optional int32 wReconnectServerId = 1;      //需要重连进去的服务器ID
+  optional int64 dwReconnectServerPort = 2;   //目标服务器Port
+  optional uint32 wReconnectServerIP = 3;     //目标服务器IP
+  optional int32 wSceneID = 4;                //目标场景
+}
