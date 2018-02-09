@@ -1,5 +1,5 @@
 ## ignore this file##
-*.meta
+#*.meta
 
 ## ignore ideal.client
 ideal-client/library/

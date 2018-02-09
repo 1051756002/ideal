@@ -21,6 +21,8 @@ ideal.init = function(callback) {
 	protobuf.init(function() {
 		// 初始化业务服务器
 		service.init(function() {
+			// 重定向, 获取本地IP地址
+			config.server.address = util.getIp();
 			// 启动服务器
 			network.init(function() {
 				util.logat('%-green', '  Version: {1}', config.version);

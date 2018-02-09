@@ -45,4 +45,32 @@ _util.isDefine = function(val) {
 	return !util.isEmpty(val);
 };
 
+// 获取IP地址
+_util.getIp = function() {
+	let ips, ip = '127.0.0.1';
+	let os = require('os');
+	let ifaces = os.networkInterfaces();
+
+	for (let t in ifaces) {
+		ips = ifaces[t];
+		// 苹果系统, 以太网
+		if ('WLAN' == t) {
+			break;
+		}
+
+		// Windows系统, 本地连接
+		if (/^本地连接/.test(t)) {
+			break;
+		}
+	}
+
+	for (let i = 0; i < ips.length; i++) {
+		if (ips[i].family == 'IPv4') {
+			ip = ips[i].address;
+			break;
+		}
+	}
+	return ip;
+};
+
 module.exports = _util;
