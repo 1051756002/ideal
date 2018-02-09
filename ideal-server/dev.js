@@ -1,3 +1,3 @@
 require('./core/ideal');
 
-util.log('dev mode2');
+util.log('dev mode');
