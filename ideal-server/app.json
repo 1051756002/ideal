@@ -1,0 +1,8 @@
+{
+    apps: [
+        {
+            name: 'ideal-server',
+            script: 'app.js',
+        }
+    ]
+}

@@ -1,4 +1,4 @@
-# ideal
+# ideal-server
 
 > 我所做的一切，只为成功！
 
@@ -8,8 +8,10 @@
 # install dependencies
 npm install
 
-# serve with hot reload at localhost:8080
+# boot server
 npm run start
-```
 
+# pm2 start-up
+pm2 start app.json
+```
 

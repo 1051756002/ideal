@@ -5,7 +5,7 @@
 	"author": "ideal",
 	"private": true,
 	"scripts": {
-		"start": "node main.js"
+		"start": "node app.js"
 	},
 	"dependencies": {
 		"protobufjs": "^6.8.4",
