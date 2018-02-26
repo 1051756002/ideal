@@ -3,6 +3,7 @@
 
 ## ignore ideal.client
 ideal-client/library/
+ideal-client/node_modules/
 ideal-client/local/
 ideal-client/temp/
 ideal-client/settings/
