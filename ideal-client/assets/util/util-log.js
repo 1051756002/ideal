@@ -9,6 +9,15 @@ _util.log = function() {
 	for (let i = 0; i < arguments.length; i++) {
 		args.push(arguments[i]);
 	}
+
+	// 字体颜色过滤
+	let result = args[0].match(/^%-#([a-z|0-9]*)$/i);
+	if (result != null && result.length == 2) {
+		args[1] = '%c' + args[1];
+		args.push('color:#' + result[1]);
+		args.shift();
+	}
+
 	console.log.apply(console, args);
 };
 
@@ -18,7 +27,13 @@ _util.logat = function() {
 	for (let i = 0; i < arguments.length; i++) {
 		args.push(arguments[i]);
 	}
-	util.log(util.format.apply(util, args));
+
+	// 字体颜色过滤
+	if (/^%-#([a-z|0-9]*)$/i.test(args[0])) {
+		util.log(args.shift(), util.format.apply(util, args));
+	} else {
+		util.log(util.format.apply(util, args));
+	}
 };
 
 // 控制平台打印警告
@@ -35,13 +50,7 @@ _util.warn = function() {
 
 // 清空控制台消息
 _util.clear = function() {
-	let content;
-	if (process.platform === 'win32') {
-		content = '\x1Bc';
-	} else {
-		content = '\x1B[2J\x1B[3J\x1B[H';
-	}
-	process.stdout.write(content);
+	console.clear();
 };
 
 module.exports = _util;

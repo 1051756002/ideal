@@ -21,6 +21,11 @@ config.notlog_recv = [0];
 config.notlog_send = [0];
 
 // proto文件列表
-config.protolist = ['./proto/MsgSocketProtoBean.proto'];
+config.protolist = [
+	'./proto/msg-socket.proto',
+	'./proto/msg-socket-login.proto',
+	'./proto/msg-socket-game.proto',
+	'./proto/MsgSocketProtoBean.proto'
+];
 
 module.exports = config;

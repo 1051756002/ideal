@@ -6,6 +6,24 @@ let listen = function(client) {
 	client.on('message', function(buffer) {
 		// service.call(client, buffer);
 		util.log('recv: ', buffer);
+
+		if (!buffer instanceof ArrayBuffer) {
+			util.log('不是正确格式');
+			return;
+		}
+
+		// 消息头部
+		let msgHead = new Uint8Array(buffer, 0, 2);
+		// 消息命令部分
+		let msgCmd = new Uint16Array(buffer, 2, 4);
+		// 消息参数
+		let msgBody = new Uint8Array(buffer, 10);
+
+		let mainCmd = msgCmd[2];
+		let subCmd = msgCmd[3];
+		let bodyBuff = new Uint8Array(msgBody);
+
+		util.log('mainCmd: {1}, subCmd: {2}', mainCmd, subCmd);
 	});
 
 	// 用户断线
@@ -27,12 +45,16 @@ network.init = function(callback) {
 
 	wss.on('connection', listen);
 
-	server.allowHalfOpen = false;
-	server.listen(config.server.port, config.server.address);
-
 	util.log('%-green', '  ServerUrl: ws://%s:%d', config.server.address, config.server.port);
-	util.log('%-green', '  Server is starting ...\n');
-	util.isDefine(callback) && callback();
+
+	server.allowHalfOpen = false;
+	server.listen({
+		port: config.server.port,
+		host: config.server.address
+	}, function() {
+		util.log('%-green', '  Server is starting ...\n');
+		util.isDefine(callback) && callback();
+	});
 };
 
 module.exports = network;

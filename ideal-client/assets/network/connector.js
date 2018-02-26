@@ -1,5 +1,5 @@
 let event = require('./event');
-let service = require('./service');
+let service = require('../service/service');
 let heartbeat = require('./heartbeat');
 
 let SocketState = {

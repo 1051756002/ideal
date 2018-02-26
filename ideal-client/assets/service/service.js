@@ -4,27 +4,19 @@
  */
 let service = {
 	// 登录模块
-	// login: require('./service_login'),
-	// 聊天模块
-	// chat: require('./service_chat'),
-	// 红包模块
-	// pocket: require('./service_pocket'),
-	// 问答模块
-	// qa: require('./service_qa'),
-	// 黄金15秒模块
-	// pt: require('./service_pt'),
+	login: require('./service-login')
 };
 
-let service_arr = [];
+let serviceList = [];
 for (let k in service) {
-	service_arr.push(service[k]);
+	serviceList.push(service[k]);
 };
 
 // 发送指令
 service.send = function(type, data) {
 	let exist = false;
-	for (let i = 0; i < service_arr.length; i++) {
-		exist = service_arr[i].send(type, data);
+	for (let i = 0; i < serviceList.length; i++) {
+		exist = serviceList[i].send(type, data);
 		if (exist) { break; }
 	}
 
@@ -36,8 +28,8 @@ service.send = function(type, data) {
 // 解析消息
 service.parseMsg = function(mainCmd, subCmd, bodyBuff) {
 	let exist = false;
-	for (let i = 0; i < service_arr.length; i++) {
-		exist = service_arr[i].parseMsg(mainCmd, subCmd, bodyBuff);
+	for (let i = 0; i < serviceList.length; i++) {
+		exist = serviceList[i].parseMsg(mainCmd, subCmd, bodyBuff);
 		if (exist) { break; }
 	}
 

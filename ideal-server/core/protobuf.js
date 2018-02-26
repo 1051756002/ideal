@@ -20,9 +20,15 @@ let loadNext = function(idx = 0, callback = null) {
 			util.log(err);
 			return;
 		}
-		protobuf[fname] = root;
+
 		util.logat('%-gray', '  - loaded file: {1}', path);
-		util.logat('%-gray', '    define as {1}', fname);
+
+		if (util.isEmpty(protobuf[fname])) {
+			protobuf[fname] = root;
+			util.logat('%-gray', '    define as {1}', fname);
+		} else {
+			util.logat('%-yellow', '  - define as {1}, but it has already existed', fname);
+		}
 		loadNext(idx + 1, callback);
 	});
 };

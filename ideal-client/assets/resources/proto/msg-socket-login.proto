@@ -1,0 +1,17 @@
+import "msg-socket.proto";
+
+package Login;
+
+// 用户秘钥验证
+// [客户端发送]
+message C_Validate_Msg {
+	optional	string	encrypstring = 1;	// 加密字符串
+	optional	string	encryptkey = 2;		// 加密的秘钥
+}
+
+// 用户秘钥验证回馈
+// [服务端发送]
+message S_Validate_FbMsg {
+	optional	S_Result_Msg result = 1;	// 回馈结果
+	optional	S_User_Msg user = 2;		// 用户信息
+}

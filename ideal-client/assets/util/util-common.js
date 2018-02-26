@@ -32,9 +32,17 @@ _util.isEmpty = function(val) {
 		case 'array':
 			return val.length == 0;
 			break;
+		case 'function':
+			return false;
+			break;
 		default:
 			return true;
 	}
+};
+
+// 是否定义了该内容
+_util.isDefine = function(val) {
+	return !util.isEmpty(val);
 };
 
 module.exports = _util;

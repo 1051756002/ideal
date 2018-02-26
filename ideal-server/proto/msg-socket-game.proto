@@ -1,0 +1,14 @@
+import "msg-socket.proto";
+
+package Game;
+
+// [客户端发送]
+message C_Test_Msg {
+	optional	string	value = 1;	// 测试值
+}
+
+// [服务端发送]
+message S_Test_FbMsg {
+	optional	S_Result_Msg result = 1;	// 回馈结果
+	optional	string	value = 2;			// 测试值
+}

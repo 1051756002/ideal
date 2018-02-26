@@ -21,16 +21,16 @@ let loadNext = function(idx = 0, callback = null) {
 			return;
 		}
 		protobuf[fname] = root;
-		util.logat('%-gray', '  - loaded file: {1}', path);
-		util.logat('%-gray', '    define as {1}', fname);
+		util.logat('%-#999999', '- loaded file: {1}', path);
+		util.logat('%-#999999', '  define as {1}', fname);
 		loadNext(idx + 1, callback);
 	});
 };
 
 protobuf.init = function(callback) {
-	util.log('%-cyan', '  protobuf loaded start.');
+	util.log('%-#009999', 'protobuf loaded start.');
 	loadNext(0, function() {
-		util.log('%-cyan', '  protobuf loaded complete.\n');
+		util.log('%-#009999', 'protobuf loaded complete.\n');
 		util.isDefine(callback) && callback();
 	});
 };

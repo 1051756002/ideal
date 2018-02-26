@@ -61,10 +61,14 @@ service.init = function(callback) {
 			return;
 		}
 
-		service._source[fname] = require(path);
-
 		util.logat('%-gray', '  - loaded file: {1}', path);
-		util.logat('%-gray', '    define as {1}', fname);
+		
+		if (util.isEmpty(service._source[fname])) {
+			service._source[fname] = require(path);
+			util.logat('%-gray', '    define as {1}', fname);
+		} else {
+			util.logat('%-yellow', '  - define as {1}, but it has already existed', fname);
+		}
 	});
 	util.log('%-cyan', '  service loaded complete.\n');
 
