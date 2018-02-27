@@ -45,12 +45,12 @@ network.init = function(callback) {
 
 	wss.on('connection', listen);
 
-	util.log('%-green', '  ServerUrl: ws://%s:%d', config.server.address, config.server.port);
+	util.log('%-green', '  ServerUrl: ws://%s:%d', config.server[1].address, config.server[1].port);
 
 	server.allowHalfOpen = false;
 	server.listen({
-		port: config.server.port,
-		host: config.server.address
+		port: config.server[1].port,
+		host: config.server[1].address
 	}, function() {
 		util.log('%-green', '  Server is starting ...\n');
 		util.isDefine(callback) && callback();

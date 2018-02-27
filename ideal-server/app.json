@@ -1,8 +1,8 @@
 {
-    apps: [
+    "apps": [
         {
-            name: 'ideal-server',
-            script: 'app.js',
+            "name": "ideal-server",
+            "script": "app.js",
         }
     ]
 }
