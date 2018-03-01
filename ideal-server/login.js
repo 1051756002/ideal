@@ -26,11 +26,13 @@ let server = http.createServer(function(req, res) {
 			'Content-Type': 'text/plain',
 			'Access-Control-Allow-Origin': '*',
 		});
-		util.log(post);
+
+		let uuid = require('node-uuid').v1();
+		util.log(uuid);
 
 		res.write(JSON.stringify({
 			code: 0,
-			token: 'ASDUIA789CH_+AIZ76544Q',
+			uuid: uuid,
 		}));
 
 		res.end();

@@ -9,5 +9,6 @@ ideal-client/temp/
 ideal-client/settings/
 
 ## ignore ideal.server
+#ideal-server/test/
 ideal-server/node_modules/
 ideal-server/npm-debug.log
