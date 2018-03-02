@@ -9,6 +9,7 @@
 	},
 	"dependencies": {
 		"md5": "^2.2.1",
+		"mongodb": "^3.0.3",
 		"mssql": "^4.1.0",
 		"node-uuid": "^1.4.8",
 		"protobufjs": "^6.8.4",

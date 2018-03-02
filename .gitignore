@@ -8,6 +8,10 @@ ideal-client/local/
 ideal-client/temp/
 ideal-client/settings/
 
+## ignore ideal.data
+ideal-data/db/
+ideal-data/log/
+
 ## ignore ideal.server
 #ideal-server/test/
 ideal-server/node_modules/
