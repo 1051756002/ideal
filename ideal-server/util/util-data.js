@@ -38,6 +38,17 @@ _util.rnd = function(min, max) {
 	return Math.floor(Math.random() * max + min);
 };
 
+// md5加密
+_util.md5 = function(content) {
+	let md5 = require('md5');
+
+	if ( typeof md5 == 'function') {
+		return md5(util.trim(content));
+	} else {
+		return content;
+	}
+};
+
 // 获取对象的属性总数量
 _util.olen = function(obj) {
 	if (Object['getOwnPropertyNames']) {

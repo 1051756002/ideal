@@ -4,4 +4,5 @@ module.exports = Object.assign.apply(Object, [
 	require('./util-data'),
 	require('./util-string'),
 	require('./util-common'),
+	require('./util-cookie'),
 ]);

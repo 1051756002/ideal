@@ -45,4 +45,23 @@ _util.isDefine = function(val) {
 	return !util.isEmpty(val);
 };
 
+/**
+ * 获得地址参数列表
+ * @param name
+ * @returns {null}
+ */
+_util.getQueryString = function (name, defval) {
+    var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+    var r, idx = location.search.indexOf('/');
+    if (idx == -1) {
+    	r = location.search.substr(1).match(reg);
+    } else {
+    	r = location.search.substring(1, idx).match(reg);
+    }
+    if (r != null) {
+        return unescape(r[2]);
+    }
+    return util.isDefine(defval) ? defval : null;
+};
+
 module.exports = _util;

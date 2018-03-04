@@ -1,17 +1,17 @@
-require('./base');
+let db = {}, _db;
 
-let db, mongo = require('mongodb').MongoClient;
+let mongo = require('mongodb').MongoClient;
 let url = 'mongodb://localhost:27017';
 
 // 查询
-let get = function(table, where = {}, callback) {
-	if (util.isEmpty(db)) {
+db.get = function(table, where = {}, callback) {
+	if (util.isEmpty(_db)) {
 		util.log('%-red', '  db is undefined.');
 		util.isDefine(callback) && callback({ code: 501 });
 		return;
 	}
 
-	db.collection(table).find(where).toArray(function(err, ret) {
+	_db.collection(table).find(where).toArray(function(err, ret) {
 		let result = { code: 0 };
 		if (util.isDefine(err)) {
 			result = {
@@ -31,14 +31,14 @@ let get = function(table, where = {}, callback) {
 };
 
 // 添加
-let add = function(table, data = {}, callback) {
-	if (util.isEmpty(db)) {
+db.add = function(table, data = {}, callback) {
+	if (util.isEmpty(_db)) {
 		util.log('%-red', '  db is undefined.');
 		util.isDefine(callback) && callback({ code: 501 });
 		return;
 	}
 
-	db.collection(table).insert(data, function(err, ret) {
+	_db.collection(table).insert(data, function(err, ret) {
 		let result = { code: 0 };
 		if (util.isDefine(err)) {
 			result = {
@@ -59,14 +59,14 @@ let add = function(table, data = {}, callback) {
 };
 
 // 删除
-let del = function(table, where = {}, callback) {
-	if (util.isEmpty(db)) {
+db.del = function(table, where = {}, callback) {
+	if (util.isEmpty(_db)) {
 		util.log('%-red', '  db is undefined.');
 		util.isDefine(callback) && callback({ code: 501 });
 		return;
 	}
 
-	db.collection(table).deleteMany(where, function(err, ret) {
+	_db.collection(table).deleteMany(where, function(err, ret) {
 		let result = { code: 0 };
 		if (util.isDefine(err)) {
 			result = {
@@ -87,21 +87,21 @@ let del = function(table, where = {}, callback) {
 };
 
 // 修改
-let mod = function(table, data = {}, where = {}, callback) {
-	if (util.isEmpty(db)) {
+db.mod = function(table, where = {}, data = {}, callback) {
+	if (util.isEmpty(_db)) {
 		util.log('%-red', '  db is undefined.');
 		util.isDefine(callback) && callback({ code: 501 });
 		return;
 	}
 
-	db.collection(table).updateMany(data, where, function(err, ret) {
+	_db.collection(table).updateMany(where, data, function(err, ret) {
 		let result = { code: 0 };
 		if (util.isDefine(err)) {
 			result = {
 				code: 500,
 				errmsg: err,
 			};
-			util.logat('%-red', '  Collection {1} delete Error: {2}', table, err);
+			util.logat('%-red', '  Collection {1} modified Error: {2}', table, err);
 		} else {
 			result = {
 				code: 0,
@@ -114,38 +114,22 @@ let mod = function(table, data = {}, where = {}, callback) {
 	});
 };
 
-let init = function(callback) {
+// 启动数据管理
+db.init = function(callback) {
+	util.log('%-green', '  DatabaseUrl: ' + url);
+
 	mongo.connect(url, function(err, client) {
 		if (util.isDefine(err)) {
 			util.log('%-red', '  DB Connection Error: ' + err);
 			return;
 		}
 
-		util.log('%-green', '  Connection success.');
+		util.log('%-green', '  Connection success.\n');
 
-		db = client.db('ideal');
+		_db = client.db('ideal');
 
 		util.isDefine(callback) && callback();
 	});
 };
 
-init(function() {
-	get('t_user', { userid: { $gte: 10000 } }, function(result) {
-		util.log(result);
-	});
-
-	false && add('t_user', [
-		{
-			userid: 10002,
-			nick: '秀姑娘',
-			username: 'gwx157',
-			password: 'gwx199416520',
-			gender: 0,
-			phone: 18518100812,
-		}
-	]);
-
-	false && del('t_user', { userid: 10001 });
-
-	false && mod('t_user', { userid: 10001 }, { $set: { nick: '秀小猪' } });
-});
+module.exports = db;

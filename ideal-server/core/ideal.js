@@ -1,8 +1,9 @@
 let ideal = {};
 
-ideal.util = require('../util/index');
+ideal.util = require('../util');
 ideal.config = require('./config');
 ideal.protobuf = require('./protobuf');
+ideal.db = require('../network/db');
 ideal.network = require('../network');
 ideal.service = require('../service');
 
@@ -26,11 +27,14 @@ ideal.init = function(callback) {
 			config.server.forEach(function(server) {
 				server.address = util.getIp();
 			});
-			// 启动服务器
-			network.init(function() {
-				util.logat('%-green', '  Version: {1}', config.version);
-				util.logat('%-green', '  DebugModel: {1}\n', config.debug);
-				util.isDefine(callback) && callback();
+			// 启动数据管理
+			ideal.db.init(function() {
+				// 启动服务器
+				network.init(function() {
+					util.logat('%-green', '  Version: {1}', config.version);
+					util.logat('%-green', '  DebugModel: {1}\n', config.debug);
+					util.isDefine(callback) && callback();
+				});
 			});
 		});
 	});

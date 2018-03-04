@@ -5,7 +5,8 @@
 	"author": "ideal",
 	"private": true,
 	"scripts": {
-		"start": "node app.js"
+		"socket": "node app.js",
+		"login": "node login.js"
 	},
 	"dependencies": {
 		"md5": "^2.2.1",

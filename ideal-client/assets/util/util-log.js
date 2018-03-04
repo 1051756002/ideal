@@ -11,7 +11,7 @@ _util.log = function() {
 	}
 
 	// 字体颜色过滤
-	let result = args[0].match(/^%-#([a-z|0-9]*)$/i);
+	let result = args[0].toString().match(/^%-#([a-z|0-9]*)$/i);
 	if (result != null && result.length == 2) {
 		args[1] = '%c' + args[1];
 		args.push('color:#' + result[1]);
@@ -29,7 +29,7 @@ _util.logat = function() {
 	}
 
 	// 字体颜色过滤
-	if (/^%-#([a-z|0-9]*)$/i.test(args[0])) {
+	if (/^%-#([a-z|0-9]*)$/i.test(args[0].toString())) {
 		util.log(args.shift(), util.format.apply(util, args));
 	} else {
 		util.log(util.format.apply(util, args));
