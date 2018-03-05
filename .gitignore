@@ -11,6 +11,11 @@ ideal-client/temp/
 ideal-data/db/
 ideal-data/log/
 
+
+## ignore ideal.decompose
+ideal-decompose/node_modules/
+ideal-decompose/out/
+
 ## ignore ideal.server
 #ideal-server/test/
 ideal-server/node_modules/
