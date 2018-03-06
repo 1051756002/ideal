@@ -1,0 +1,105 @@
+{
+    "file": "num_message.png", 
+    "frames": {
+        "0": {
+            "offY": 0, 
+            "offX": 0, 
+            "sourceH": 17, 
+            "sourceW": 10, 
+            "w": 10, 
+            "h": 17, 
+            "y": 0, 
+            "x": 25
+        }, 
+        "4": {
+            "offY": 0, 
+            "offX": 0, 
+            "sourceH": 17, 
+            "sourceW": 11, 
+            "w": 11, 
+            "h": 17, 
+            "y": 0, 
+            "x": 0
+        }, 
+        "2": {
+            "offY": 0, 
+            "offX": 0, 
+            "sourceH": 17, 
+            "sourceW": 9, 
+            "w": 9, 
+            "h": 17, 
+            "y": 19, 
+            "x": 0
+        }, 
+        "8": {
+            "offY": 0, 
+            "offX": 0, 
+            "sourceH": 17, 
+            "sourceW": 10, 
+            "w": 10, 
+            "h": 17, 
+            "y": 0, 
+            "x": 49
+        }, 
+        "6": {
+            "offY": 0, 
+            "offX": 0, 
+            "sourceH": 17, 
+            "sourceW": 8, 
+            "w": 8, 
+            "h": 17, 
+            "y": 19, 
+            "x": 33
+        }, 
+        "1": {
+            "offY": 0, 
+            "offX": 0, 
+            "sourceH": 17, 
+            "sourceW": 5, 
+            "w": 5, 
+            "h": 17, 
+            "y": 19, 
+            "x": 43
+        }, 
+        "5": {
+            "offY": 0, 
+            "offX": 0, 
+            "sourceH": 17, 
+            "sourceW": 9, 
+            "w": 9, 
+            "h": 17, 
+            "y": 19, 
+            "x": 11
+        }, 
+        "3": {
+            "offY": 0, 
+            "offX": 0, 
+            "sourceH": 17, 
+            "sourceW": 10, 
+            "w": 10, 
+            "h": 17, 
+            "y": 0, 
+            "x": 13
+        }, 
+        "9": {
+            "offY": 0, 
+            "offX": 0, 
+            "sourceH": 17, 
+            "sourceW": 9, 
+            "w": 9, 
+            "h": 17, 
+            "y": 19, 
+            "x": 22
+        }, 
+        "7": {
+            "offY": 0, 
+            "offX": 0, 
+            "sourceH": 17, 
+            "sourceW": 10, 
+            "w": 10, 
+            "h": 17, 
+            "y": 0, 
+            "x": 37
+        }
+    }
+}

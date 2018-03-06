@@ -1,0 +1,165 @@
+{
+    "file": "num_police.png", 
+    "frames": {
+        "/": {
+            "offY": 1, 
+            "offX": 1, 
+            "sourceH": 20, 
+            "sourceW": 10, 
+            "w": 9, 
+            "h": 19, 
+            "y": 44, 
+            "x": 0
+        }, 
+        ",": {
+            "offY": 14, 
+            "offX": 0, 
+            "sourceH": 20, 
+            "sourceW": 5, 
+            "w": 5, 
+            "h": 6, 
+            "y": 21, 
+            "x": 55
+        }, 
+        "0": {
+            "offY": 0, 
+            "offX": 0, 
+            "sourceH": 20, 
+            "sourceW": 11, 
+            "w": 11, 
+            "h": 20, 
+            "y": 0, 
+            "x": 0
+        }, 
+        ".": {
+            "offY": 15, 
+            "offX": 1, 
+            "sourceH": 20, 
+            "sourceW": 5, 
+            "w": 4, 
+            "h": 4, 
+            "y": 29, 
+            "x": 55
+        }, 
+        "4": {
+            "offY": 1, 
+            "offX": 0, 
+            "sourceH": 20, 
+            "sourceW": 11, 
+            "w": 11, 
+            "h": 19, 
+            "y": 0, 
+            "x": 39
+        }, 
+        "2": {
+            "offY": 0, 
+            "offX": 0, 
+            "sourceH": 20, 
+            "sourceW": 10, 
+            "w": 10, 
+            "h": 20, 
+            "y": 22, 
+            "x": 0
+        }, 
+        "m": {
+            "offY": 5, 
+            "offX": 0, 
+            "sourceH": 20, 
+            "sourceW": 14, 
+            "w": 14, 
+            "h": 15, 
+            "y": 21, 
+            "x": 39
+        }, 
+        "8": {
+            "offY": 0, 
+            "offX": 0, 
+            "sourceH": 20, 
+            "sourceW": 11, 
+            "w": 11, 
+            "h": 20, 
+            "y": 0, 
+            "x": 26
+        }, 
+        "+": {
+            "offY": 6, 
+            "offX": 0, 
+            "sourceH": 20, 
+            "sourceW": 8, 
+            "w": 8, 
+            "h": 9, 
+            "y": 44, 
+            "x": 18
+        }, 
+        "6": {
+            "offY": 1, 
+            "offX": 0, 
+            "sourceH": 20, 
+            "sourceW": 10, 
+            "w": 10, 
+            "h": 19, 
+            "y": 0, 
+            "x": 52
+        }, 
+        "1": {
+            "offY": 0, 
+            "offX": 0, 
+            "sourceH": 20, 
+            "sourceW": 5, 
+            "w": 5, 
+            "h": 20, 
+            "y": 44, 
+            "x": 11
+        }, 
+        "5": {
+            "offY": 1, 
+            "offX": 0, 
+            "sourceH": 20, 
+            "sourceW": 9, 
+            "w": 9, 
+            "h": 19, 
+            "y": 38, 
+            "x": 47
+        }, 
+        "3": {
+            "offY": 0, 
+            "offX": 0, 
+            "sourceH": 20, 
+            "sourceW": 11, 
+            "w": 11, 
+            "h": 20, 
+            "y": 0, 
+            "x": 13
+        }, 
+        "9": {
+            "offY": 0, 
+            "offX": 0, 
+            "sourceH": 20, 
+            "sourceW": 10, 
+            "w": 10, 
+            "h": 20, 
+            "y": 22, 
+            "x": 12
+        }, 
+        "k": {
+            "offY": 1, 
+            "offX": 0, 
+            "sourceH": 20, 
+            "sourceW": 9, 
+            "w": 9, 
+            "h": 19, 
+            "y": 38, 
+            "x": 36
+        }, 
+        "7": {
+            "offY": 0, 
+            "offX": 0, 
+            "sourceH": 20, 
+            "sourceW": 10, 
+            "w": 10, 
+            "h": 20, 
+            "y": 22, 
+            "x": 24
+        }
+    }
+}

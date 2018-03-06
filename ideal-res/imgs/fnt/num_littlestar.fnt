@@ -1,0 +1,105 @@
+{
+    "file": "num_littlestar.png", 
+    "frames": {
+        "0": {
+            "offY": 1, 
+            "offX": 0, 
+            "sourceH": 23, 
+            "sourceW": 12, 
+            "w": 12, 
+            "h": 22, 
+            "y": 24, 
+            "x": 0
+        }, 
+        "4": {
+            "offY": 1, 
+            "offX": 0, 
+            "sourceH": 23, 
+            "sourceW": 13, 
+            "w": 13, 
+            "h": 22, 
+            "y": 0, 
+            "x": 0
+        }, 
+        "2": {
+            "offY": 1, 
+            "offX": 0, 
+            "sourceH": 23, 
+            "sourceW": 11, 
+            "w": 11, 
+            "h": 22, 
+            "y": 24, 
+            "x": 44
+        }, 
+        "8": {
+            "offY": 1, 
+            "offX": 0, 
+            "sourceH": 23, 
+            "sourceW": 13, 
+            "w": 13, 
+            "h": 22, 
+            "y": 0, 
+            "x": 15
+        }, 
+        "6": {
+            "offY": 1, 
+            "offX": 0, 
+            "sourceH": 23, 
+            "sourceW": 11, 
+            "w": 11, 
+            "h": 22, 
+            "y": 24, 
+            "x": 14
+        }, 
+        "1": {
+            "offY": 0, 
+            "offX": 0, 
+            "sourceH": 23, 
+            "sourceW": 6, 
+            "w": 6, 
+            "h": 23, 
+            "y": 48, 
+            "x": 13
+        }, 
+        "5": {
+            "offY": 1, 
+            "offX": 0, 
+            "sourceH": 23, 
+            "sourceW": 11, 
+            "w": 11, 
+            "h": 22, 
+            "y": 25, 
+            "x": 27
+        }, 
+        "3": {
+            "offY": 1, 
+            "offX": 0, 
+            "sourceH": 23, 
+            "sourceW": 12, 
+            "w": 12, 
+            "h": 22, 
+            "y": 0, 
+            "x": 44
+        }, 
+        "9": {
+            "offY": 1, 
+            "offX": 0, 
+            "sourceH": 23, 
+            "sourceW": 11, 
+            "w": 11, 
+            "h": 22, 
+            "y": 48, 
+            "x": 0
+        }, 
+        "7": {
+            "offY": 0, 
+            "offX": 0, 
+            "sourceH": 23, 
+            "sourceW": 12, 
+            "w": 12, 
+            "h": 23, 
+            "y": 0, 
+            "x": 30
+        }
+    }
+}

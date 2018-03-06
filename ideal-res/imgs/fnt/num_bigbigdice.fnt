@@ -1,0 +1,115 @@
+{
+    "file": "num_bigbigdice.png", 
+    "frames": {
+        "0": {
+            "offY": 2, 
+            "offX": 0, 
+            "sourceH": 76, 
+            "sourceW": 39, 
+            "w": 39, 
+            "h": 74, 
+            "y": 0, 
+            "x": 41
+        }, 
+        "4": {
+            "offY": 3, 
+            "offX": 0, 
+            "sourceH": 76, 
+            "sourceW": 40, 
+            "w": 40, 
+            "h": 72, 
+            "y": 0, 
+            "x": 82
+        }, 
+        "2": {
+            "offY": 2, 
+            "offX": 0, 
+            "sourceH": 76, 
+            "sourceW": 35, 
+            "w": 35, 
+            "h": 74, 
+            "y": 74, 
+            "x": 82
+        }, 
+        "8": {
+            "offY": 3, 
+            "offX": 0, 
+            "sourceH": 76, 
+            "sourceW": 38, 
+            "w": 38, 
+            "h": 72, 
+            "y": 0, 
+            "x": 124
+        }, 
+        "+": {
+            "offY": 25, 
+            "offX": 0, 
+            "sourceH": 76, 
+            "sourceW": 32, 
+            "w": 32, 
+            "h": 34, 
+            "y": 75, 
+            "x": 212
+        }, 
+        "6": {
+            "offY": 3, 
+            "offX": 0, 
+            "sourceH": 76, 
+            "sourceW": 36, 
+            "w": 36, 
+            "h": 73, 
+            "y": 0, 
+            "x": 203
+        }, 
+        "1": {
+            "offY": 2, 
+            "offX": 0, 
+            "sourceH": 76, 
+            "sourceW": 19, 
+            "w": 19, 
+            "h": 73, 
+            "y": 75, 
+            "x": 191
+        }, 
+        "5": {
+            "offY": 3, 
+            "offX": 0, 
+            "sourceH": 76, 
+            "sourceW": 35, 
+            "w": 35, 
+            "h": 72, 
+            "y": 74, 
+            "x": 119
+        }, 
+        "3": {
+            "offY": 3, 
+            "offX": 0, 
+            "sourceH": 76, 
+            "sourceW": 37, 
+            "w": 37, 
+            "h": 72, 
+            "y": 0, 
+            "x": 164
+        }, 
+        "9": {
+            "offY": 2, 
+            "offX": 0, 
+            "sourceH": 76, 
+            "sourceW": 33, 
+            "w": 33, 
+            "h": 74, 
+            "y": 74, 
+            "x": 156
+        }, 
+        "7": {
+            "offY": 0, 
+            "offX": 0, 
+            "sourceH": 76, 
+            "sourceW": 39, 
+            "w": 39, 
+            "h": 75, 
+            "y": 0, 
+            "x": 0
+        }
+    }
+}

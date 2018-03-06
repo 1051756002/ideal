@@ -1,0 +1,6 @@
+{"file":"fly_coin.png","frames":{
+"fly_coin_png":{"x":0,"y":0,"w":28,"h":29,"offX":6,"offY":8,"sourceW":42,"sourceH":44},
+"fly_diamond_png":{"x":0,"y":31,"w":23,"h":21,"offX":2,"offY":4,"sourceW":28,"sourceH":28},
+"fly_pop_png":{"x":30,"y":22,"w":28,"h":19,"offX":0,"offY":5,"sourceW":28,"sourceH":28},
+"fly_vit_png":{"x":25,"y":43,"w":21,"h":21,"offX":4,"offY":3,"sourceW":28,"sourceH":28},
+"fly_yb_png":{"x":30,"y":0,"w":27,"h":20,"offX":0,"offY":4,"sourceW":28,"sourceH":28}}}
