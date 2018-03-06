@@ -1,0 +1,250 @@
+
+fire_animat.png
+size: 1024,1024
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+body1
+  rotate: false
+  xy: 212, 707
+  size: 196, 315
+  orig: 196, 315
+  offset: 0, 0
+  index: -1
+body2
+  rotate: false
+  xy: 410, 728
+  size: 196, 294
+  orig: 196, 294
+  offset: 0, 0
+  index: -1
+body3
+  rotate: true
+  xy: 608, 416
+  size: 200, 281
+  orig: 200, 281
+  offset: 0, 0
+  index: -1
+body4
+  rotate: true
+  xy: 608, 618
+  size: 196, 292
+  orig: 196, 292
+  offset: 0, 0
+  index: -1
+body5
+  rotate: false
+  xy: 2, 69
+  size: 196, 302
+  orig: 196, 302
+  offset: 0, 0
+  index: -1
+body8
+  rotate: false
+  xy: 2, 373
+  size: 204, 317
+  orig: 204, 317
+  offset: 0, 0
+  index: -1
+body9
+  rotate: false
+  xy: 2, 692
+  size: 208, 330
+  orig: 208, 330
+  offset: 0, 0
+  index: -1
+eye10
+  rotate: true
+  xy: 894, 836
+  size: 186, 99
+  orig: 186, 99
+  offset: 0, 0
+  index: -1
+eye12
+  rotate: false
+  xy: 2, 2
+  size: 173, 65
+  orig: 173, 65
+  offset: 0, 0
+  index: -1
+eye3
+  rotate: true
+  xy: 891, 441
+  size: 175, 49
+  orig: 175, 49
+  offset: 0, 0
+  index: -1
+eye4
+  rotate: false
+  xy: 404, 94
+  size: 176, 49
+  orig: 176, 49
+  offset: 0, 0
+  index: -1
+eye5
+  rotate: true
+  xy: 837, 2
+  size: 176, 49
+  orig: 176, 49
+  offset: 0, 0
+  index: -1
+eye6
+  rotate: false
+  xy: 404, 13
+  size: 171, 79
+  orig: 171, 79
+  offset: 0, 0
+  index: -1
+eye7
+  rotate: true
+  xy: 942, 475
+  size: 172, 64
+  orig: 172, 64
+  offset: 0, 0
+  index: -1
+eye8
+  rotate: false
+  xy: 200, 35
+  size: 189, 53
+  orig: 189, 53
+  offset: 0, 0
+  index: -1
+eye9
+  rotate: true
+  xy: 902, 649
+  size: 185, 98
+  orig: 185, 98
+  offset: 0, 0
+  index: -1
+leg2
+  rotate: false
+  xy: 888, 41
+  size: 118, 148
+  orig: 118, 148
+  offset: 0, 0
+  index: -1
+nose
+  rotate: false
+  xy: 942, 432
+  size: 58, 41
+  orig: 58, 41
+  offset: 0, 0
+  index: -1
+pao_fire/pao_smoge/pao_smoge0002
+  rotate: false
+  xy: 588, 180
+  size: 248, 234
+  orig: 296, 264
+  offset: 26, 7
+  index: -1
+pao_fire/pao_smoge/pao_smoge0003
+  rotate: true
+  xy: 404, 145
+  size: 261, 182
+  orig: 296, 264
+  offset: 16, 68
+  index: -1
+pao_fire/pao_smoge/pao_smoge0004
+  rotate: true
+  xy: 410, 450
+  size: 276, 196
+  orig: 296, 264
+  offset: 10, 58
+  index: -1
+pao_fire/pao_smoge/pao_smoge0005
+  rotate: true
+  xy: 200, 90
+  size: 281, 202
+  orig: 296, 264
+  offset: 6, 56
+  index: -1
+pao_fire/pao_smoge/pao_smoge0006
+  rotate: false
+  xy: 608, 816
+  size: 284, 206
+  orig: 296, 264
+  offset: 12, 56
+  index: -1
+pao_fire/pao_smoge/pao_smoge0007
+  rotate: true
+  xy: 208, 408
+  size: 282, 200
+  orig: 296, 264
+  offset: 13, 60
+  index: -1
+pao_fire/pao_smoge/pao_smoge0009
+  rotate: false
+  xy: 588, 16
+  size: 247, 162
+  orig: 296, 264
+  offset: 27, 65
+  index: -1
+pao_fire/paohuo
+  rotate: false
+  xy: 838, 191
+  size: 184, 223
+  orig: 186, 228
+  offset: 1, 0
+  index: -1
+
+fire_animat2.png
+size: 1024,512
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+body6
+  rotate: false
+  xy: 2, 236
+  size: 252, 223
+  orig: 252, 223
+  offset: 0, 0
+  index: -1
+body7
+  rotate: false
+  xy: 2, 2
+  size: 224, 232
+  orig: 224, 232
+  offset: 0, 0
+  index: -1
+eye1
+  rotate: false
+  xy: 256, 224
+  size: 165, 55
+  orig: 165, 55
+  offset: 0, 0
+  index: -1
+eye11
+  rotate: false
+  xy: 826, 384
+  size: 165, 75
+  orig: 165, 75
+  offset: 0, 0
+  index: -1
+eye2
+  rotate: false
+  xy: 826, 326
+  size: 165, 56
+  orig: 165, 56
+  offset: 0, 0
+  index: -1
+leg1
+  rotate: false
+  xy: 732, 287
+  size: 92, 172
+  orig: 92, 172
+  offset: 0, 0
+  index: -1
+pao_fire/pao_smoge/pao_smoge0001
+  rotate: true
+  xy: 517, 279
+  size: 180, 213
+  orig: 296, 264
+  offset: 57, 29
+  index: -1
+pao_fire/pao_smoge/pao_smoge0008
+  rotate: false
+  xy: 256, 281
+  size: 259, 178
+  orig: 296, 264
+  offset: 24, 65
+  index: -1

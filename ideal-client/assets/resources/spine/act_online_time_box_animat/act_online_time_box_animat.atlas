@@ -1,0 +1,174 @@
+
+act_online_time_box_animat.png
+size: 871,871
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+baoguang
+  rotate: false
+  xy: 644, 470
+  size: 147, 147
+  orig: 147, 147
+  offset: 0, 0
+  index: -1
+box1
+  rotate: true
+  xy: 805, 8
+  size: 41, 52
+  orig: 41, 52
+  offset: 0, 0
+  index: -1
+box10
+  rotate: true
+  xy: 666, 619
+  size: 251, 126
+  orig: 251, 126
+  offset: 0, 0
+  index: -1
+box11
+  rotate: false
+  xy: 1, 22
+  size: 251, 126
+  orig: 251, 126
+  offset: 0, 0
+  index: -1
+box12
+  rotate: false
+  xy: 254, 22
+  size: 251, 126
+  orig: 251, 126
+  offset: 0, 0
+  index: -1
+box13
+  rotate: true
+  xy: 794, 635
+  size: 235, 60
+  orig: 235, 60
+  offset: 0, 0
+  index: -1
+box14
+  rotate: true
+  xy: 794, 398
+  size: 235, 56
+  orig: 235, 56
+  offset: 0, 0
+  index: -1
+box15
+  rotate: false
+  xy: 180, 415
+  size: 235, 56
+  orig: 235, 56
+  offset: 0, 0
+  index: -1
+box16
+  rotate: true
+  xy: 421, 397
+  size: 246, 221
+  orig: 246, 221
+  offset: 0, 0
+  index: -1
+box17
+  rotate: true
+  xy: 644, 150
+  size: 246, 221
+  orig: 246, 221
+  offset: 0, 0
+  index: -1
+box18
+  rotate: false
+  xy: 1, 174
+  size: 246, 221
+  orig: 246, 221
+  offset: 0, 0
+  index: -1
+box2
+  rotate: false
+  xy: 463, 178
+  size: 100, 68
+  orig: 100, 68
+  offset: 0, 0
+  index: -1
+box3
+  rotate: true
+  xy: 110, 405
+  size: 100, 68
+  orig: 100, 68
+  offset: 0, 0
+  index: -1
+diguang
+  rotate: false
+  xy: 421, 645
+  size: 243, 225
+  orig: 286, 230
+  offset: 21, 3
+  index: -1
+hongbaoguang
+  rotate: false
+  xy: 507, 1
+  size: 147, 147
+  orig: 147, 147
+  offset: 0, 0
+  index: -1
+huanguang
+  rotate: false
+  xy: 644, 411
+  size: 140, 57
+  orig: 147, 70
+  offset: 3, 4
+  index: -1
+lanbaoguang
+  rotate: false
+  xy: 656, 1
+  size: 147, 147
+  orig: 147, 147
+  offset: 0, 0
+  index: -1
+lvbaoguang
+  rotate: false
+  xy: 463, 248
+  size: 147, 147
+  orig: 147, 147
+  offset: 0, 0
+  index: -1
+quanguang
+  rotate: false
+  xy: 249, 179
+  size: 212, 216
+  orig: 227, 228
+  offset: 7, 7
+  index: -1
+sheguang
+  rotate: false
+  xy: 1, 591
+  size: 418, 279
+  orig: 436, 302
+  offset: 7, 15
+  index: -1
+shguang
+  rotate: true
+  xy: 1, 507
+  size: 82, 230
+  orig: 82, 230
+  offset: 0, 0
+  index: -1
+touying
+  rotate: true
+  xy: 233, 473
+  size: 116, 120
+  orig: 116, 120
+  offset: 0, 0
+  index: -1
+xingxing
+  rotate: true
+  xy: 1, 397
+  size: 108, 107
+  orig: 108, 107
+  offset: 0, 0
+  index: -1
+yinying00
+  rotate: true
+  xy: 805, 51
+  size: 97, 33
+  orig: 103, 34
+  offset: 3, 1
+  index: -1

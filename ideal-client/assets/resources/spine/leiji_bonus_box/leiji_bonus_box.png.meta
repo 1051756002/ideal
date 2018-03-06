@@ -1,0 +1,30 @@
+{
+  "ver": "1.0.0",
+  "uuid": "a6479f90-d468-4cbb-b1d5-736c349232a0",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "subMetas": {
+    "leiji_bonus_box": {
+      "ver": "1.0.3",
+      "uuid": "68936411-278a-4057-b0bd-2537fba0638f",
+      "rawTextureUuid": "a6479f90-d468-4cbb-b1d5-736c349232a0",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": -4.5,
+      "trimX": 0,
+      "trimY": 9,
+      "width": 267,
+      "height": 258,
+      "rawWidth": 267,
+      "rawHeight": 267,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

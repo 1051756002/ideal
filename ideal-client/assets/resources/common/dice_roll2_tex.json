@@ -1,0 +1,43 @@
+{
+	"width": 256,
+	"SubTexture": [{
+		"width": 70,
+		"y": 73,
+		"height": 70,
+		"name": "2",
+		"x": 1
+	}, {
+		"width": 70,
+		"y": 145,
+		"height": 70,
+		"name": "3",
+		"x": 1
+	}, {
+		"width": 70,
+		"y": 73,
+		"height": 70,
+		"name": "6",
+		"x": 73
+	}, {
+		"width": 70,
+		"y": 1,
+		"height": 70,
+		"name": "5",
+		"x": 145
+	}, {
+		"width": 70,
+		"y": 1,
+		"height": 70,
+		"name": "4",
+		"x": 73
+	}, {
+		"width": 70,
+		"y": 1,
+		"height": 70,
+		"name": "1",
+		"x": 1
+	}],
+	"height": 256,
+	"name": "dice_roll2",
+	"imagePath": "dice_roll2_tex.png"
+}

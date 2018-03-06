@@ -1,0 +1,13 @@
+
+shop_energy_ani.png
+size: 16,16
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+energy_pao
+  rotate: false
+  xy: 2, 3
+  size: 12, 11
+  orig: 14, 14
+  offset: 1, 2
+  index: -1

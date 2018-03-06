@@ -1,0 +1,34 @@
+
+invite_skeleton.png
+size: 512,512
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+invite_shine
+  rotate: true
+  xy: 2, 2
+  size: 135, 71
+  orig: 136, 72
+  offset: 1, 0
+  index: -1
+invite_shine2
+  rotate: false
+  xy: 2, 349
+  size: 273, 36
+  orig: 273, 36
+  offset: 0, 0
+  index: -1
+yellow_shine
+  rotate: false
+  xy: 2, 139
+  size: 123, 163
+  orig: 123, 163
+  offset: 0, 0
+  index: -1
+yellow_shine2
+  rotate: false
+  xy: 2, 304
+  size: 266, 43
+  orig: 266, 43
+  offset: 0, 0
+  index: -1

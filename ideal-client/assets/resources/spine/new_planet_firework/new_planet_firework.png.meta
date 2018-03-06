@@ -1,0 +1,30 @@
+{
+  "ver": "1.0.0",
+  "uuid": "c2823fb6-0046-4049-8a92-c1ea6a1c6438",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "subMetas": {
+    "new_planet_firework": {
+      "ver": "1.0.3",
+      "uuid": "b5b52646-8353-4914-ad25-7d49e5a172fb",
+      "rawTextureUuid": "c2823fb6-0046-4049-8a92-c1ea6a1c6438",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": -60,
+      "offsetY": 11,
+      "trimX": 2,
+      "trimY": 2,
+      "width": 900,
+      "height": 998,
+      "rawWidth": 1024,
+      "rawHeight": 1024,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

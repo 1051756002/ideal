@@ -1,0 +1,34 @@
+
+jineng.png
+size: 256,256
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+bubble_star
+  rotate: false
+  xy: 128, 14
+  size: 69, 65
+  orig: 69, 65
+  offset: 0, 0
+  index: -1
+click
+  rotate: true
+  xy: 220, 82
+  size: 118, 21
+  orig: 118, 21
+  offset: 0, 0
+  index: -1
+jineng
+  rotate: false
+  xy: 1, 80
+  size: 218, 120
+  orig: 218, 120
+  offset: 0, 0
+  index: -1
+jineng_light
+  rotate: false
+  xy: 1, 1
+  size: 126, 78
+  orig: 126, 78
+  offset: 0, 0
+  index: -1
