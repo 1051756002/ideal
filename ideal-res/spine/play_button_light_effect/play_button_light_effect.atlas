@@ -1,0 +1,118 @@
+
+play_button_light_effect.png
+size: 491,491
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+button/ang
+  rotate: false
+  xy: 2, 344
+  size: 229, 145
+  orig: 229, 145
+  offset: 0, 0
+  index: -1
+button/button_guang1
+  rotate: false
+  xy: 2, 27
+  size: 163, 42
+  orig: 163, 42
+  offset: 0, 0
+  index: -1
+button/button_guang2
+  rotate: true
+  xy: 188, 218
+  size: 124, 29
+  orig: 124, 35
+  offset: 0, 6
+  index: -1
+button/button_guang3
+  rotate: true
+  xy: 394, 183
+  size: 83, 87
+  orig: 83, 87
+  offset: 0, 0
+  index: -1
+button/button_guang4
+  rotate: false
+  xy: 2, 71
+  size: 147, 145
+  orig: 147, 145
+  offset: 0, 0
+  index: -1
+button/button_shine/button_shine0001
+  rotate: false
+  xy: 387, 16
+  size: 51, 41
+  orig: 184, 124
+  offset: 6, 79
+  index: -1
+button/button_shine/button_shine0002
+  rotate: false
+  xy: 386, 120
+  size: 69, 61
+  orig: 184, 124
+  offset: 2, 62
+  index: -1
+button/button_shine/button_shine0003
+  rotate: false
+  xy: 394, 268
+  size: 95, 97
+  orig: 184, 124
+  offset: 0, 27
+  index: -1
+button/button_shine/button_shine0004
+  rotate: true
+  xy: 270, 110
+  size: 129, 114
+  orig: 184, 124
+  offset: 0, 10
+  index: -1
+button/button_shine/button_shine0005
+  rotate: false
+  xy: 233, 241
+  size: 159, 124
+  orig: 184, 124
+  offset: 0, 0
+  index: -1
+button/button_shine/button_shine0006
+  rotate: false
+  xy: 2, 218
+  size: 184, 124
+  orig: 184, 124
+  offset: 0, 0
+  index: -1
+button/button_shine/button_shine0007
+  rotate: false
+  xy: 233, 367
+  size: 177, 122
+  orig: 184, 124
+  offset: 7, 0
+  index: -1
+button/button_shine/button_shine0008
+  rotate: true
+  xy: 151, 80
+  size: 136, 117
+  orig: 184, 124
+  offset: 48, 0
+  index: -1
+button/button_shine/button_shine0009
+  rotate: false
+  xy: 270, 5
+  size: 115, 103
+  orig: 184, 124
+  offset: 69, 0
+  index: -1
+button/button_shine/button_shine0010
+  rotate: true
+  xy: 412, 387
+  size: 102, 72
+  orig: 184, 124
+  offset: 82, 0
+  index: -1
+button/button_shine/button_shine0011
+  rotate: false
+  xy: 387, 59
+  size: 66, 59
+  orig: 184, 124
+  offset: 118, 1
+  index: -1

@@ -1,0 +1,125 @@
+
+leiji_bonus_box.png
+size: 267,267
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+gaizi
+  rotate: true
+  xy: 107, 74
+  size: 65, 33
+  orig: 65, 33
+  offset: 0, 0
+  index: -1
+gaizi_G
+  rotate: true
+  xy: 198, 67
+  size: 65, 33
+  orig: 65, 33
+  offset: 0, 0
+  index: -1
+gaizi_R
+  rotate: true
+  xy: 233, 67
+  size: 65, 33
+  orig: 65, 33
+  offset: 0, 0
+  index: -1
+hezi
+  rotate: false
+  xy: 1, 10
+  size: 64, 57
+  orig: 64, 57
+  offset: 0, 0
+  index: -1
+hezi_G
+  rotate: false
+  xy: 174, 134
+  size: 64, 57
+  orig: 64, 57
+  offset: 0, 0
+  index: -1
+hezi_R
+  rotate: false
+  xy: 67, 10
+  size: 64, 57
+  orig: 64, 57
+  offset: 0, 0
+  index: -1
+hudiejie1
+  rotate: false
+  xy: 240, 173
+  size: 26, 18
+  orig: 26, 18
+  offset: 0, 0
+  index: -1
+hudiejie2
+  rotate: false
+  xy: 240, 153
+  size: 26, 18
+  orig: 26, 18
+  offset: 0, 0
+  index: -1
+jie
+  rotate: false
+  xy: 167, 62
+  size: 11, 14
+  orig: 11, 14
+  offset: 0, 0
+  index: -1
+juguang
+  rotate: false
+  xy: 1, 141
+  size: 128, 125
+  orig: 134, 130
+  offset: 3, 3
+  index: -1
+lanbaoguang
+  rotate: false
+  xy: 174, 193
+  size: 74, 73
+  orig: 74, 74
+  offset: 0, 0
+  index: -1
+sheguang
+  rotate: false
+  xy: 1, 69
+  size: 104, 70
+  orig: 109, 76
+  offset: 2, 4
+  index: -1
+shguang
+  rotate: false
+  xy: 131, 151
+  size: 41, 115
+  orig: 41, 115
+  offset: 0, 0
+  index: -1
+xingxing
+  rotate: false
+  xy: 142, 78
+  size: 54, 54
+  orig: 54, 54
+  offset: 0, 0
+  index: -1
+yinying
+  rotate: true
+  xy: 250, 203
+  size: 63, 15
+  orig: 63, 15
+  offset: 0, 0
+  index: -1
+yinying_G
+  rotate: true
+  xy: 150, 15
+  size: 61, 15
+  orig: 63, 15
+  offset: 1, 0
+  index: -1
+yinying_R
+  rotate: true
+  xy: 133, 10
+  size: 62, 15
+  orig: 63, 15
+  offset: 1, 0
+  index: -1
