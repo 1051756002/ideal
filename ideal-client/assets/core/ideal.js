@@ -16,7 +16,7 @@ window.console.timeEnd = function() {};
 
 // 初始化架构
 ideal.init = function(callback) {
-	util.clear();
+	// util.clear();
 	// 加载protobuf
 	protobuf.init(function() {
 		// ideal.conn.connect();
@@ -25,7 +25,3 @@ ideal.init = function(callback) {
 		util.isDefine(callback) && callback();
 	});
 };
-
-ideal.init(function() {
-	util.log('%-#0fe029', 'ideal framework initialization end.');
-});

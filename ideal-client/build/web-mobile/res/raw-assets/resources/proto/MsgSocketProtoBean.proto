@@ -1,0 +1,940 @@
+//***********************************登录-登录服务器start**************************************//
+
+//[主命令]
+//#define Main_CMD_Login_Login 11//登录-登录服务器
+
+//子命令-服务器发送
+//#define Sub_CMD_S_Login_Login  1//登录服务器(发送登录结果)
+
+//子命令-客户端发送
+//#define Sub_CMD_C_Login_Login = 1001//发送指令登录(登录服务器)
+
+//***********************************登录-登录服务器end**************************************//
+
+
+//***********************************登录-聊天服务器start**************************************//
+
+//[主命令]
+//define Main_CMD_Login_Chat 21登录-聊天服务器
+
+	//子命令-服务器发送
+	//#define Sub_CMD_S_Login_Chat  1//聊天服务器(发送登录结果)
+
+	//子命令-客户端发送
+	//#define Sub_CMD_C_Login_Chat = 1001//发送指令登录(聊天服务器)
+
+//***********************************登录-聊天服务器end**************************************//
+
+
+//***********************************聊天/用户业务start**************************************//
+
+//[主命令]-聊天相关
+//#define Main_CMD_Chat 31//聊天
+
+	//子命令-服务器发送
+	//#define Sub_CMD_S_Enter_FbMsg = 1,//当前用户进入聊天室结果回馈
+	//#define Sub_CMD_S_Enter_Msg = 2,//推送其他用户进入聊天室
+	//#define Sub_CMD_S_Exit_FbMsg = 3,//当前用户退出聊天室结果回馈
+	//#define Sub_CMD_S_Exit_Msg = 4,//推送其他用户退出聊天室
+	//#define Sub_CMD_S_Chat_Msg = 5,//推送其他用户发送的聊天消息
+	//#define Sub_CMD_S_Chat_FbMsg = 6,//当前用户发送聊天消息结果回馈
+	//#define Sub_CMD_S_Online_FbMsg = 7,//在线列表结果回馈
+	//#define Sub_CMD_S_PrivChat_FbMsg = 8,//发送私聊结果回馈
+	//#define Sub_CMD_S_PrivChat_Msg = 9,//推送私聊消息给接收者
+	//#define Sub_CMD_S_PrivChatList_FbMsg = 10,//我的私聊列表结果回馈
+	//#define Sub_CMD_S_PrivChatEach_FbMsg = 11,//和用户的私聊记录结果回馈   
+	//#define Sub_CMD_S_SysNotice_Msg = 12,//系统公告
+
+	//子命令-客户端发送
+	//#define Sub_CMD_C_Enter_Msg = 1001,//进入聊天室
+	//#define Sub_CMD_C_Exit_Msg = 1002,//退出聊天室
+	//#define Sub_CMD_C_Chat_Msg = 1003,//发送聊天消息
+	//#define Sub_CMD_C_Online_Msg = 1004,//获取在线列表
+	//#define Sub_CMD_C_PrivChat_Msg = 1005,//发送私聊
+	//#define Sub_CMD_C_PrivChatList_Msg = 1006,//获取我的私聊列表
+	//#define Sub_CMD_C_PrivChatEach_Msg = 1007,//获取和用户的私聊记录
+
+////////////////////////////////////////////////////////////////////////////////////////////
+
+//[主命令]-用户相关
+//#define Main_CMD_Redgift = 32,//红包
+
+	//子命令-服务器发送
+	//#define Sub_CMD_S_ScoreLog_FbMsg = 1,//我的红包账户
+	//#define Sub_CMD_S_ScoreCash_FbMsg = 2,//红包账户提现
+	//#define Sub_CMD_S_SendGiftA_FbMsg = 3,//发送手气红包结果回馈
+	//#define Sub_CMD_S_OpenGiftA_FbMsg = 4,//打开手气红包结果回馈
+	//#define Sub_CMD_S_SendGiftS_FbMsg = 5,//发起人品红包结果回馈
+	//#define Sub_CMD_S_SendGiftS_Msg = 6,//推送发起的人品红包
+	//#define Sub_CMD_S_AttendGiftS_FbMsg = 7,//参与人品红包结果回馈
+	//#define Sub_CMD_S_EndGiftS_Msg = 8,//人品红包結算结果回馈
+	//#define Sub_CMD_S_LookGiftS_FbMsg = 9,//查看人品红包结果回馈
+
+	//子命令-客户端发送
+	//#define Sub_CMD_C_ScoreLog_Msg = 1001,//我的红包账户
+	//#define Sub_CMD_C_ScoreCash_Msg = 1002,//红包账户提现
+	//#define Sub_CMD_C_SendGiftA_Msg = 1003,//发送手气红包
+	//#define Sub_CMD_C_OpenGiftA_Msg = 1004,//打开手气红包
+	//#define Sub_CMD_C_SendGiftS_Msg = 1005,//发起人品红包
+	//#define Sub_CMD_C_AttendGiftS_Msg = 1006,//参与人品红包
+	//#define Sub_CMD_C_LookGiftS_Msg = 1007,//查看人品红包
+
+////////////////////////////////////////////////////////////////////////////////////////////
+//[主命令]-用户相关
+//#define Main_CMD_User = 33,
+
+	//子命令-服务器发送
+	//#define Sub_CMD_S_User_Offline = 1,//下线
+
+	//子命令-客户端发送
+
+////////////////////////////////////////////////////////////////////////////////////////////
+
+//[主命令]-用户相关
+//#define Main_CMD_Question = 34,//问答
+
+	//子命令-服务器发送  
+	//#define Sub_CMD_S_GetQuestion_FbMsg = 1,//主播获取随机题目回馈
+	//#define Sub_CMD_S_SendQuestion_FbMsg = 2,//主播发布问答回馈
+	//#define Sub_CMD_S_SendQuestion_Msg = 3,//主播发布问答推送
+	//#define Sub_CMD_S_LookQuestion_FbMsg = 4,//查看问答回馈
+	//#define Sub_CMD_S_AnswerQuestion_FbMsg = 5,//回答问答回馈
+	//#define Sub_CMD_S_CloseQuestion_FbMsg = 6,//主播关闭问答回馈
+	//#define Sub_CMD_S_CloseQuestion_Msg = 7,//主播关闭问答推送
+	//#define Sub_CMD_S_MyQuestion_FbMsg = 8,//我的问答回馈
+	//#define Sub_CMD_S_QueNoRoll_FbMsg = 9,//我发起的问答不再滚动展示回馈
+	//#define Sub_CMD_S_QueNoRoll_Msg = 10,//问答不再滚动展示推送
+	//#define Sub_CMD_S_CorrectQue_Msg = 11,////主播批改答案回馈
+
+	//子命令-客户端发送
+	//#define Sub_CMD_C_GetQuestion_Msg = 1001,//主播获取一个随机题目
+	//#define Sub_CMD_C_SendQuestion_Msg = 1002,//主播发布一个问答
+	//#define Sub_CMD_C_LookQuestion_Msg = 1003,//查看问答
+	//#define Sub_CMD_C_AnswerQuestion_Msg = 1004,//回答问答
+	//#define Sub_CMD_C_CloseQuestion_Msg = 1005,//主播关闭问答
+	//#define Sub_CMD_C_MyQuestion_Msg = 1006,//我的问答
+	//#define Sub_CMD_C_QueNoRoll_Msg = 1007,//我发起的问答不再滚动展示
+	//#define Sub_CMD_C_CorrectQue_Msg = 1008,//主播批改答案
+
+////////////////////////////////////////////////////////////////////////////////////////////
+
+//[主命令]-用户相关
+//#define Main_CMD_Quizshow = 35,//抢答
+
+	//子命令-服务器发送
+	//#define Sub_CMD_S_SendQuizshow_FbMsg = 1,//主播发布抢答回馈
+	//#define Sub_CMD_S_SendQuizshow_Msg = 2,//主播发布抢答推送
+	//#define Sub_CMD_S_LookQuizshow_FbMsg = 3,//查看抢答回馈
+	//#define Sub_CMD_S_AnswerQuizshow_FbMsg = 4,//回答抢答回馈
+	//#define Sub_CMD_S_CloseQuizshow_FbMsg = 5,//主播关闭抢答回馈
+	//#define Sub_CMD_S_CloseQuizshow_Msg = 6,//主播关闭抢答推送
+
+	//子命令-客户端发送
+	//#define Sub_CMD_C_SendQuizshow_Msg = 1001,//主播发布一个抢答
+	//#define Sub_CMD_C_LookQuizshow_Msg = 1002,//查看抢答
+	//#define Sub_CMD_C_AnswerQuizshow_Msg = 1003,//回答抢答
+	//#define Sub_CMD_C_CloseQuizshow_Msg = 1004,//主播关闭抢答
+
+////////////////////////////////////////////////////////////////////////////////////////////
+
+
+//返回的结果对象(服务器发送)
+message S_Result_Msg {
+    optional    int32   issuccess = 1;//成功1  失败0
+    optional    int32   errorcode = 2;//错误代号
+    optional    string  errormsg = 3;//错误信息
+}
+
+//Main_CMD_Login_Login
+//Sub_CMD_C_Login_Login
+//登录服务器,请求登录(客户端发送)
+message C_Login_Server_Msg {
+    optional string userencrypstring = 1;//用户加密数据
+    optional string userencryptkey = 2; //加密的密钥
+}
+
+//Main_CMD_Login_Login
+//Sub_CMD_S_Login_Login
+//登录服务器,返回域名、端口号列表(服务器发送)
+message S_Login_ServerList_Msg {
+    optional    S_Result_Msg resultbean = 1;//结果对象
+    optional    int32  userid = 2;//用户ID
+	optional    string  code = 3;//验证code
+    repeated    S_Login_ServerBean_Msg  loginServerList = 4; //域名 端口号列表
+}
+
+//登录服务器返回的域名、端口号对象(服务器发送)
+message S_Login_ServerBean_Msg {
+    optional string domain = 1;//域名
+    optional int32  port = 2;//端口号
+}
+
+//Main_CMD_Login_Chat
+//Sub_CMD_C_Login_Chat
+//聊天服务器,请求登录(客户端发送)
+message C_Login_ChatServer_Msg {
+    optional int32    userid = 1;//用户ID
+    optional string  code = 2;//验证code
+}
+
+//Main_CMD_Login_Chat
+//Sub_CMD_S_Login_Chat
+//聊天服务器,返回登录结果(服务器发送)
+message S_Login_ChatServer_Msg {
+    optional    S_Result_Msg   resultbean = 1;//结果对象
+	optional    S_User_Msg   user = 2;//用户信息
+	optional    int32    newmsgcount = 3;//未读私聊消息数
+}
+
+////////////////////////////////Main_CMD_Chat//////////////////////////////
+
+//Main_CMD_Chat
+//Sub_CMD_C_Enter_Msg
+//进入聊天室(客户端发送)
+message C_Enter_Msg {
+    optional    int32   roomid = 1;//聊天室id
+}
+
+//Main_CMD_Chat
+//Sub_CMD_S_Enter_FbMsg
+//进入聊天室(服务器发送)
+message S_Enter_FbMsg {
+	optional    S_Result_Msg   resultbean = 1;//结果对象
+    optional    int32   roomid = 2;//聊天室id
+	repeated    S_User_Msg   onliners = 3;//在线用户
+	repeated    S_Chat_Msg   chatlist = 4;//最新聊天内容
+	repeated    S_ChatRoll_Msg   rolllist = 5;//顶部滚动图文
+	optional    int64   servertime = 6;//服务器时间
+	optional    S_RedGiftS_Msg  redgifts = 7;//人品红包
+}
+
+//聊天室顶部滚动图文
+message S_ChatRoll_Msg {
+    optional    string    url = 1;//链接
+	optional    string    img = 2;//图片
+	optional    string    remark = 3;//描述
+	optional    int32    typeid = 4;//类型(0:图文链接|1:问答红包|2:黄金15秒)
+}
+
+//Main_CMD_Chat
+//Sub_CMD_S_Enter_Msg
+//进入聊天室(服务器发送)
+message S_Enter_Msg {
+    optional    int32   roomid = 1;//聊天室id
+	optional    S_User_Msg   user = 2;//用户信息
+}
+
+//Main_CMD_Chat
+//Sub_CMD_C_Exit_Msg
+//退出聊天室(客户端发送)
+message C_Exit_Msg {
+    optional    int32   roomid = 1;//聊天室id
+}
+
+//Main_CMD_Chat
+//Sub_CMD_S_Exit_FbMsg
+//退出聊天室(服务器发送)
+message S_Exit_FbMsg {
+	optional    S_Result_Msg   resultbean = 1;//结果对象
+    optional    int32   roomid = 2;//聊天室id
+}
+
+//Main_CMD_Chat
+//Sub_CMD_S_Exit_Msg
+//退出聊天室(服务器发送)
+message S_Exit_Msg {
+    optional    int32   roomid = 1;//聊天室id
+	optional    int32   userid = 2;//用户id
+}
+
+//Main_CMD_Chat
+//Sub_CMD_C_Chat_Msg
+//聊天消息(客户端发送)
+message C_Chat_Msg {
+	optional    int32   roomid = 1;//聊天室id
+    optional    int32   receiverid = 2;//接收者id
+    optional    string  message = 3;//发送的消息内容
+	optional    int32   classid = 4; //消息类型(0文本1图片2语音3视频4红包)
+}
+
+//Main_CMD_Chat
+//Sub_CMD_S_Chat_Msg
+//聊天消息(服务器主动发送)
+message S_Chat_Msg {
+	optional    int32   roomid = 1;//聊天室id
+    optional    int32   senderid = 2;//发送者id
+    optional    int32   receiverid = 3;//接收者id
+    optional    string  message = 4;//接收到的消息内容
+    optional    int64   msgid = 5;//消息id(服务器生成)
+    optional    S_User_Msg  user = 6; //发送者资料
+    optional    int32   classid = 7; //消息类型(0文本1图片2语音3视频4红包)
+	optional    int64   receivetime = 8;//服务器回馈此消息的时间(服务器时间)
+}
+
+//Main_CMD_Chat
+//Sub_CMD_S_Chat_FbMsg
+//聊天消息回馈(服务器发送)
+message S_Chat_FbMsg {
+    optional    S_Result_Msg   resultbean = 1;//结果对象
+	optional    int32   roomid = 2;//聊天室id
+	optional    int32   receiverid = 3;//接收者id
+    optional    string  message = 4;//发送的消息内容
+	optional    int32   classid = 5; //消息类型(0文本1图片2语音3视频4红包)
+	optional    int64   receivetime = 6;//服务器回馈此消息的时间(服务器时间)
+	optional    int64   msgid = 7;//消息id(服务器生成)
+}
+
+//Main_CMD_Chat
+//Sub_CMD_C_Online_Msg
+//在线列表(客户端发送)
+message C_Online_Msg {
+    optional    int32   roomid = 1;//聊天室id
+	optional    int32   typeid = 2;//0:所有用户|1:主播
+	optional    int32   page = 3;//页码(主播取所有不分页)
+	optional    int32   pagesize = 4;//页大小
+}
+
+//Main_CMD_Chat
+//Sub_CMD_S_Online_FbMsg
+//在线列表(服务器发送)
+message S_Online_FbMsg {
+    optional    int32   roomid = 1;//聊天室id
+	optional    int32   typeid = 2;//0:所有用户|1:主播
+	optional    int32   page = 3;//页码
+	optional    int32   pagesize = 4;//页大小
+	optional    int32   total = 5;//总数
+	repeated    S_User_Msg   list = 6;//在线用户
+}
+
+//Main_CMD_User
+//Sub_CMD_S_User_Offline
+//服务器发送下线消息
+message S_Offline_Msg {
+    optional    int32    userid = 1;//需要下线的用户id
+}
+
+//Main_CMD_User
+//Sub_CMD_C_UserInfo
+//获取用户信息(客户端发送)
+message C_User_Msg {
+    optional    int32    userid = 1;//需要获取个人信息的用户id
+}
+
+//Main_CMD_User
+//Sub_CMD_S_UserInfo
+//获取用户信息回馈(服务器发送)
+message S_User_Msg {
+    optional    int32    userid = 1;//用户ID
+    optional    string   nick = 2;//用户名称
+	optional    string   headimg = 3;//用户头像
+    optional    int32    gender = 4;//用户性别  1男 0女
+    optional    string   birth = 5;//用户生日
+    optional    string   cityname = 6;//用户城市
+	optional    string   signature = 7;//用户签名
+	optional    int32    age = 8;//用户年龄
+    optional    string   phone = 9;//用户手机
+	optional    int32    anchor = 10;//任职聊天室ID
+}
+
+//Main_CMD_Chat
+//Sub_CMD_C_PrivChat_Msg
+//聊天消息(客户端发送)
+message C_PrivChat_Msg {
+    optional    int32   receiverid = 1;//接收者id
+    optional    string  message = 2;//发送的消息内容
+	optional    int32   classid = 3; //消息类型(0文本1图片2语音3视频4红包|5回答问答|6关闭问答|7回答抢答|8关闭抢答)
+}
+
+//Main_CMD_Chat
+//Sub_CMD_S_PrivChat_Msg
+//聊天消息(服务器主动发送)
+message S_PrivChat_Msg {
+    optional    int32   senderid = 1;//发送者id
+	optional    int32   receiverid = 2;//接收者id
+    optional    string  message = 3;//接收到的消息内容
+    optional    int64   msgid = 4;//消息id(服务器生成)
+    optional    S_User_Msg  user = 5; //发送者资料
+    optional    int32   classid = 6; //消息类型(0文本1图片2语音3视频4红包)
+	optional    int64   receivetime = 7;//服务器回馈此消息的时间(服务器时间)
+}
+
+//Main_CMD_Chat
+//Sub_CMD_S_PrivChat_FbMsg
+//聊天消息回馈(服务器发送)
+message S_PrivChat_FbMsg {
+    optional    S_Result_Msg   resultbean = 1;//结果对象
+	optional    int32   receiverid = 2;//接收者id
+    optional    string  message = 3;//发送的消息内容
+	optional    int32   classid = 4; //消息类型(0文本1图片2语音3视频4红包)
+	optional    int64   msgid = 5;//消息id(服务器生成)
+	optional    int64   receivetime = 6;//服务器回馈此消息的时间(服务器时间)
+}
+
+//Main_CMD_Chat
+//Sub_CMD_C_PrivChatList_Msg
+//在线列表(客户端发送)
+message C_PrivChatList_Msg {
+    optional    int32   typeid = 1;//0:全部|1:我说|2:TA说
+	optional    int32   page = 2;//页码
+	optional    int32   pagesize = 3;//页大小
+}
+
+//Main_CMD_Chat
+//Sub_CMD_S_PrivChatList_FbMsg
+//在线列表(服务器发送)
+message S_PrivChatList_FbMsg {
+    optional    int32   typeid = 1;//0:全部|1:我说|2:TA说
+	optional    int32   page = 2;//页码
+	optional    int32   pagesize = 3;//页大小
+	optional    int32   total = 4;//总数
+	repeated    S_PrivChat_Msg   list = 5;//对聊记录
+}
+
+//Main_CMD_Chat
+//Sub_CMD_C_PrivChatEach_Msg
+//在线列表(客户端发送)
+message C_PrivChatEach_Msg {
+    optional    int32   friuid = 1;//对方ID
+	optional    int32   page = 2;//页码
+	optional    int32   pagesize = 3;//页大小
+}
+
+//Main_CMD_Chat
+//Sub_CMD_S_PrivChatEach_FbMsg
+//在线列表(服务器发送)
+message S_PrivChatEach_FbMsg {
+    optional    int32   friuid = 1;//对方ID
+	optional    int32   page = 2;//页码
+	optional    int32   pagesize = 3;//页大小
+	optional    int32   total = 4;//总数
+	repeated    S_PrivChat_Msg   list = 5;//对聊记录
+}
+
+//Main_CMD_Chat
+//Sub_CMD_S_SysNotice_Msg
+//系统广播消息(服务器发送)
+message S_SysNotice_Msg {
+	optional    int32    roomid = 1;//聊天室id
+    optional    string     content = 2;//内容
+}
+
+////////////////////////////////Main_CMD_Redgift//////////////////////////////
+
+//Main_CMD_Redgift
+//Sub_CMD_C_ScoreLog_Msg
+//我的红包账户(客户端发送)
+message C_ScoreLog_Msg {
+	optional    int32   page = 1;//页码(=0时只查总额不查日志)
+	optional    int32   pagesize = 2;//页大小
+}
+
+//Main_CMD_Redgift
+//Sub_CMD_S_ScoreLog_FbMsg
+//我的红包账户(服务器发送)
+message S_ScoreLog_FbMsg {
+    optional    int64   score = 1;//账户总额
+	optional    int32   page = 2;//页码
+	optional    int32   pagesize = 3;//页大小
+	optional    int32   total = 4;//总数
+	repeated    S_ScoreLog_Msg   list = 5;//对聊记录
+}
+
+//红包账户流水
+message S_ScoreLog_Msg {
+	optional    int32    rid = 1;
+	optional    int32    userid = 2;//用户ID
+	optional    int64    updatescore = 3;//变化金额
+	optional    int64    nowscore = 4;//账户剩余总额
+	optional    int32    main_sid = 5;//主业务ID
+	optional    int32    sub_sid = 6;//子业务ID
+	optional    string   keyid = 7;//相关红包ID
+	optional    int64    addtime = 8;//操作时候
+	optional    string   remark = 9;//备注
+}
+
+//Main_CMD_Redgift
+//Sub_CMD_C_ScoreCash_Msg
+//红包账户提现(客户端发送)
+message C_ScoreCash_Msg {
+	optional    int64   nums = 1;//提现额度
+}
+
+//Main_CMD_Redgift
+//Sub_CMD_S_ScoreCash_FbMsg
+//红包账户提现(服务器发送)
+message S_ScoreCash_FbMsg {
+	optional    S_Result_Msg   resultbean = 1;//结果对象
+	optional    int64    nums = 2;//提现额度
+	optional    int64    nowscore = 3;//账户剩余总额
+}
+
+//Main_CMD_Redgift
+//Sub_CMD_C_SendGiftA_Msg
+//发送手气红包(客户端发送)
+message C_SendGiftA_Msg {
+	optional    int32   roomid = 1;//聊天室id
+	optional    int32   nums = 2;//红包个数
+	optional    int64   total = 3;//总金额
+	optional    string  remark = 4;//内容
+	optional    int32    flag = 5;//0:红包账户|1:乐币账户
+}
+
+//Main_CMD_Redgift
+//Sub_CMD_S_SendGiftA_FbMsg
+//发送手气红包(服务器发送)
+message S_SendGiftA_FbMsg {
+	optional    S_Result_Msg   resultbean = 1;//结果对象
+	optional    int32    roomid = 2;//聊天室id
+	optional    int64    nums = 3;//红包个数
+	optional    int64    total = 4;//总金额
+	optional    string   remark = 5;//内容
+	optional    string   code = 6;//红包发成功的编码
+}
+
+//Main_CMD_Redgift
+//Sub_CMD_C_OpenGiftA_Msg
+//打开手气红包(客户端发送)
+message C_OpenGiftA_Msg {
+	optional    string   code = 1;//红包编码
+}
+
+//Main_CMD_Redgift
+//Sub_CMD_S_OpenGiftA_FbMsg
+//打开手气红包(服务器发送)
+message S_OpenGiftA_FbMsg {
+	optional    S_Result_Msg   resultbean = 1;//结果对象
+	optional    int32    retflag = 2;//0:没抢到|1:抢到|2:已抢过
+	optional    int64    stone = 3;//抢到金额
+	optional    S_RedGiftA_Msg  redgift = 4;//红包详情
+	repeated    S_RedGiftALog_Msg   list = 5;//被抢记录
+}
+
+//手气红包详情
+message S_RedGiftA_Msg {
+	optional    int32    redid = 1;//红包id
+	optional    int32    roomid = 2;//聊天室id
+	optional    int32    userid = 3;//用户id
+	optional    string    remark = 4;//留言
+	optional    int64    total = 5;//总金额
+	optional    int32    nums = 6;//红包个数
+	optional    int32    residue = 7;//剩余个数
+	optional    string    code = 8;//红包编码
+	optional    int64    addtime = 9;//发送时间
+	optional    int64    endtime = 10;//结束时间
+	optional    S_User_Msg  user = 11; //发送者资料
+}
+//手气红包被抢情况
+message S_RedGiftALog_Msg {
+	optional    int32    redid = 1;//红包id
+	optional    int32    userid = 2;//用户id
+	optional    int64    stone = 3;//单个金额
+	optional    int64    addtime = 4;//发送时间
+	optional    int64    gettime = 5;//获得时间
+	optional    int32    roomid = 6;//聊天室id
+	optional    S_User_Msg  user = 7; //获得者资料
+}
+
+//Main_CMD_Redgift
+//Sub_CMD_C_SendGiftS_Msg
+//发起人品红包(客户端发送)
+message C_SendGiftS_Msg {
+	optional    int32    roomid = 1;//聊天室id
+	optional    int64    stone = 2;//参与金额
+	optional    int32    flag = 3;//0:红包账户|1:乐币账户
+}
+
+//Main_CMD_Redgift
+//Sub_CMD_S_SendGiftS_FbMsg
+//发起人品红包(服务器发送)
+message S_SendGiftS_FbMsg {
+	optional    S_Result_Msg   resultbean = 1;//结果对象
+	optional    S_RedGiftS_Msg  redgift = 2;//红包详情
+}
+
+//Main_CMD_Redgift
+//Sub_CMD_S_SendGiftS_Msg
+//推送发起的人品红包(服务器发送)
+message S_RedGiftS_Msg {
+	optional    int32    redid = 1;//红包id
+	optional    int32    roomid = 2;//聊天室id
+	optional    int32    userid = 3;//用户id
+	optional    int64    stone = 4;//参与金额
+	optional    int32    usertotal = 5;//参与人数
+	optional    int64    stonetotal = 6;//总金额
+	optional    int64    endtime = 7;//结束时间
+	optional    int32    astate = 8;//状态
+	optional    int64    writetime = 9;//发起时间
+	optional    S_User_Msg  user = 10; //发送者资料
+	optional    int32    times = 11;//剩余时间
+}
+
+//Main_CMD_Redgift
+//Sub_CMD_C_AttendGiftS_Msg
+//参与人品红包(客户端发送)
+message C_AttendGiftS_Msg {
+	optional    int32   redid = 1;//红包id
+}
+
+//Main_CMD_Redgift
+//Sub_CMD_S_AttendGiftS_FbMsg
+//参与人品红包(服务器发送)
+message S_AttendGiftS_FbMsg {
+	optional    S_Result_Msg   resultbean = 1;//结果对象
+	optional    int64    stone = 2;//分到金额
+	optional    S_RedGiftS_Msg   redgift = 3;//红包详情
+	repeated    S_RedGiftSLog_Msg   list = 4;//参与记录
+}
+
+//人品红包参与情况
+message S_RedGiftSLog_Msg {
+	optional    int32    redid = 1;//红包id
+	optional    int32    roomid = 2;//聊天室id
+	optional    int32    userid = 3;//用户id
+	optional    int64    stone = 4;//参与金额
+	optional    int64    getstone = 5;//分到金额
+	optional    int32    getstate = 6;//分配状态
+	optional    int32    astate = 7;//红包状态(0:进行中|1:已结束|2:已结算)
+	optional    S_User_Msg  user = 8;//获得者资料
+}
+
+//Main_CMD_Redgift
+//Sub_CMD_S_EndGiftS_Msg
+//人品红包結算(服务器发送)
+message S_EndGiftS_Msg {
+	optional    int64    stone = 1;//分到金额
+	optional    S_RedGiftS_Msg   redgift = 2;//红包详情
+}
+
+//Main_CMD_Redgift
+//Sub_CMD_C_LookGiftS_Msg
+//查看人品红包(客户端发送)
+message C_LookGiftS_Msg {
+	optional    int32   redid = 1;//红包id
+}
+
+//Main_CMD_Redgift
+//Sub_CMD_S_LookGiftS_FbMsg
+//查看人品红包(服务器发送)
+message S_LookGiftS_FbMsg {
+	optional    int64    stone = 1;//分到金额(-1:未参与|0:参与未结算|>0:结算所得)
+	optional    S_RedGiftS_Msg   redgift = 2;//红包详情
+	repeated    S_RedGiftSLog_Msg   list = 3;//参与记录
+}
+
+////////////////////////////////Main_CMD_Question//////////////////////////////
+
+//Main_CMD_Question
+//Sub_CMD_C_GetQuestion_Msg
+//获取一个随机题目(客户端发送)
+message C_GetQuestion_Msg {
+	optional    int32    roomid = 1;//聊天室id
+}
+
+//Main_CMD_Question
+//Sub_CMD_S_GetQuestion_FbMsg
+//获取一个随机题目(服务器发送)
+message S_GetQuestion_FbMsg {
+	optional    int32    roomid = 1;//聊天室id
+	optional    S_Topic_Msg   detail = 2;//题目详情
+}
+
+//题目详情
+message S_Topic_Msg {
+	optional    string    code = 1;
+	optional    string    title = 2;
+	optional    string    titleurl = 3;
+}
+
+//Main_CMD_Question
+//Sub_CMD_C_SendQuestion_Msg
+//发布一个问答(客户端发送)
+message C_SendQuestion_Msg {
+	optional    int32    roomid = 1;//聊天室id
+	optional    string    title = 2;//自定义题目
+	optional    string    titleurl = 3;//自定义题目图片
+	optional    string    remark = 4;//展示标题
+}
+
+//Main_CMD_Question
+//Sub_CMD_S_SendQuestion_FbMsg
+//发布一个问答(服务器发送)
+message S_SendQuestion_FbMsg {
+	optional    S_Result_Msg   resultbean = 1;//结果对象
+	optional    int32    roomid = 2;//聊天室id
+	optional    int32    rid = 3;//问答id
+	optional    S_Question_Msg   detail = 4;//题目详情
+}
+
+//Main_CMD_Question
+//Sub_CMD_S_SendQuestion_Msg
+//发布一个问答(服务器发送)
+message S_Question_Msg {
+	optional    int32    rid = 1;//问答id
+	optional    int32    roomid = 2;//聊天室id
+	optional    int32    userid = 3;//发起人
+	optional    string    title = 4;//问答题目
+	optional    string    titleurl = 5;//问答题目图片
+	optional    string    remark = 6;//问答展示标题
+	optional    int32    flag = 7;//问答状态(0:进行中1:关闭)
+	optional    int64    addtime = 8;//发起时间
+	optional    int64    endtime = 9;//结束时间
+	optional    int32    joins = 10;//答题人数
+	optional    int32    rights = 11;//答对人数
+	optional    S_User_Msg   user = 12; //发送者资料
+}
+
+//Main_CMD_Question
+//Sub_CMD_C_LookQuestion_Msg
+//查看问答(客户端发送)
+message C_LookQuestion_Msg {
+	optional    int32    roomid = 1;//聊天室id
+	optional    int32    qid = 2;//问答id
+}
+
+//Main_CMD_Question
+//Sub_CMD_S_LookQuestion_FbMsg
+//查看问答(服务器发送)
+message S_LookQuestion_FbMsg {
+	optional    int32    roomid = 1;//聊天室id
+	optional    S_Question_Msg   detail = 2;//题目详情
+	repeated    S_QuestionAnswer_Msg   list = 3;//回答用户
+}
+
+//问答回答用户
+message S_QuestionAnswer_Msg {
+	optional    int32    rid = 1;//回答id
+	optional    int32    qid = 2;//问答id
+	optional    int32    userid = 3;//用户id
+	optional    string    answer = 4;//用户答案
+	optional    int32    flag = 5;//是否正确
+	optional    int64    addtime = 6;//回答时间
+	optional    S_User_Msg   user = 7; //用户资料
+}
+
+//Main_CMD_Question
+//Sub_CMD_C_AnswerQuestion_Msg
+//回答问答(客户端发送)
+message C_AnswerQuestion_Msg {
+	optional    int32    roomid = 1;//聊天室id
+	optional    int32    qid = 2;//问答id
+	optional    string    answer = 3;//用户答案
+}
+
+//Main_CMD_Chat
+//Sub_CMD_S_AnswerQuestion_FbMsg
+//回答问答(服务器发送)
+message S_AnswerQuestion_FbMsg {
+	optional    S_Result_Msg   resultbean = 1;//结果对象
+	optional    int32    qid = 2;//问答id
+	optional    string    answer = 3;//用户答案
+}
+
+//Main_CMD_Question
+//Sub_CMD_C_CloseQuestion_Msg
+//主播关闭问答(客户端发送)
+message C_CloseQuestion_Msg {
+	optional    int32    roomid = 1;//聊天室id
+	optional    int32    qid = 2;//问答id
+}
+
+//Main_CMD_Question
+//Sub_CMD_S_CloseQuestion_FbMsg
+//主播关闭问答(服务器发送)
+message S_CloseQuestion_FbMsg {
+	optional    S_Result_Msg   resultbean = 1;//结果对象
+	optional    int32    roomid = 2;//聊天室id
+	optional    int32    qid = 3;//问答id
+}
+
+//Main_CMD_Question
+//Sub_CMD_S_CloseQuestion_Msg
+//主播关闭问答(服务器发送)
+message S_CloseQuestion_Msg {
+	optional    int32    roomid = 1;//聊天室id
+	optional    int32    qid = 2;//问答id
+}
+
+//Main_CMD_Question
+//Sub_CMD_C_QueNoRoll_Msg
+//问答不再滚动展示(客户端发送)
+message C_QueNoRoll_Msg {
+	optional    int32    roomid = 1;//聊天室id
+	optional    int32    qid = 2;//问答id
+}
+
+//Main_CMD_Question
+//Sub_CMD_S_QueNoRoll_FbMsg
+//问答不再滚动展示(服务器发送)
+message S_QueNoRoll_FbMsg {
+	optional    S_Result_Msg   resultbean = 1;//结果对象
+	optional    int32    roomid = 2;//聊天室id
+	optional    int32    qid = 3;//问答id
+}
+
+//Main_CMD_Question
+//Sub_CMD_S_QueNoRoll_Msg
+//问答不再滚动展示(服务器发送)
+message S_QueNoRoll_Msg {
+	optional    int32    roomid = 1;//聊天室id
+	optional    int32    qid = 2;//问答id
+}
+
+
+//Main_CMD_Question
+//Sub_CMD_C_MyQuestion_Msg
+//我的问答(客户端发送)
+message C_MyQuestion_Msg {
+	
+}
+
+//Main_CMD_Question
+//Sub_CMD_S_MyQuestion_FbMsg
+//我的问答(服务器发送)
+message S_MyQuestion_FbMsg {
+	optional    S_Question_Msg   detail = 1;//题目详情
+}
+
+//Main_CMD_Question
+//Sub_CMD_C_CorrectQue_Msg
+//主播批改答案(客户端发送)
+message C_CorrectQue_Msg {
+	optional    int32    roomid = 1;//聊天室id
+	optional    int32    qid = 2;//问答id
+	optional    int32    rid = 3;//回答id
+	optional    int32    flag = 4;//1:正确|0:错误|-1:改正确为错误(不批改则默认错误)
+}
+
+//Main_CMD_Question
+//Sub_CMD_S_CorrectQue_Msg
+//主播批改答案(服务器发送)
+message S_CorrectQue_FbMsg {
+	optional    S_Result_Msg   resultbean = 1;//结果对象
+	optional    int32    roomid = 2;//聊天室id
+	optional    int32    qid = 3;//问答id
+	optional    int32    rid = 4;//回答id
+	optional    int32    flag = 5;//1:正确|0:错误
+}
+
+////////////////////////////////Main_CMD_Quizshow//////////////////////////////
+
+//Main_CMD_Quizshow
+//Sub_CMD_C_SendQuizshow_Msg
+//发布一个抢答(客户端发送)
+message C_SendQuizshow_Msg {
+	optional    int32    roomid = 1;//聊天室id
+	optional    string    title = 2;//标题
+	optional    string    question = 3;//自定义题目
+	optional    string    imgurl = 4;//自定义题目图片
+	optional    string    optionA = 5;//选项A
+	optional    string    optionB = 6;//选项B
+	optional    string    optionC = 7;//选项C
+	optional    string    optionD = 8;//选项D
+	optional    string    answer = 9;//答案
+	optional    int32    times = 10;//作答时限
+}
+
+//Main_CMD_Quizshow
+//Sub_CMD_S_SendQuizshow_FbMsg
+//发布一个抢答(服务器发送)
+message S_SendQuizshow_FbMsg {
+	optional    S_Result_Msg   resultbean = 1;//结果对象
+	optional    S_Quizshow_Msg   detail = 2;//题目详情
+}
+
+//Main_CMD_Quizshow
+//Sub_CMD_S_SendQuizshow_Msg
+//发布一个抢答(服务器发送)
+message S_Quizshow_Msg {
+	optional    int32    rid = 1;//抢答id
+	optional    int32    roomid = 2;//聊天室id
+	optional    int32    userid = 3;//出题人id
+	optional    string    title = 4;//标题
+	optional    string    question = 5;//题目
+	optional    string    imgurl = 6;//题目图片
+	optional    string    optionA = 7;//选项A
+	optional    string    optionB = 8;//选项B
+	optional    string    optionC = 9;//选项C
+	optional    string    optionD = 10;//选项D
+	optional    string    answer = 11;//答案
+	optional    int32    times = 12;//作答时限
+	optional    int32    flag = 13;//题目状态(0:进行中|1:结束|2:关闭)
+	optional    int64    addtime = 14;//发起时间
+	optional    int64    endtime = 15;//结束时间
+	optional    int64    systime = 16;//服务器时间
+	optional    int32    joins = 17;//答题人数
+	optional    int32    rights = 18;//答对人数
+	optional    S_User_Msg   user = 19; //发送者资料
+}
+
+//Main_CMD_Quizshow
+//Sub_CMD_C_LookQuizshow_Msg
+//查看抢答(客户端发送)
+message C_LookQuizshow_Msg {
+	optional    int32    roomid = 1;//聊天室id
+	optional    int32    qid = 2;//抢答id
+}
+
+//Main_CMD_Quizshow
+//Sub_CMD_S_LookQuizshow_FbMsg
+//查看抢答(服务器发送)
+message S_LookQuizshow_FbMsg {
+	optional    int32    roomid = 1;//聊天室id
+	optional    S_Quizshow_Msg   detail = 2;//题目详情
+	optional    S_QuizshowAnswer_Msg   myanswer = 3;//我的回答
+	repeated    S_QuizshowAnswer_Msg   list = 4;//回答用户
+}
+
+//抢答回答用户
+message S_QuizshowAnswer_Msg {
+	optional    int32    rid = 1;//回答id
+	optional    int32    qid = 2;//抢答id
+	optional    int32    userid = 3;//用户id
+	optional    string    answer = 4;//用户答案
+	optional    int32    flag = 5;//是否正确
+	optional    int64    addtime = 6;//回答时间
+	optional    int32    times = 7;//回答用时(秒)
+	optional    S_User_Msg   user = 8; //用户资料
+}
+
+//Main_CMD_Quizshow
+//Sub_CMD_C_AnswerQuizshow_Msg
+//回答抢答(客户端发送)
+message C_AnswerQuizshow_Msg {
+	optional    int32    roomid = 1;//聊天室id
+	optional    int32    qid = 2;//抢答id
+	optional    string    answer = 3;//用户答案
+}
+
+//Main_CMD_Quizshow
+//Sub_CMD_S_AnswerQuizshow_FbMsg
+//回答问答(服务器发送)
+message S_AnswerQuizshow_FbMsg {
+	optional    S_Result_Msg   resultbean = 1;//结果对象
+	optional    int32    qid = 2;//抢答id
+	optional    string    answer = 3;//用户答案
+}
+
+//Main_CMD_Quizshow
+//Sub_CMD_C_CloseQuizshow_Msg
+//主播关闭抢答(客户端发送)
+message C_CloseQuizshow_Msg {
+	optional    int32    roomid = 1;//聊天室id
+	optional    int32    qid = 2;//抢答id
+}
+
+//Main_CMD_Quizshow
+//Sub_CMD_S_CloseQuizshow_FbMsg
+//主播关闭问答(服务器发送)
+message S_CloseQuizshow_FbMsg {
+	optional    S_Result_Msg   resultbean = 1;//结果对象
+	optional    int32    roomid = 2;//聊天室id
+	optional    int32    qid = 3;//抢答id
+}
+
+//Main_CMD_Question
+//Sub_CMD_S_CloseQuizshow_Msg
+//主播关闭抢答(服务器发送)
+message S_CloseQuizshow_Msg {
+	optional    int32    roomid = 1;//聊天室id
+	optional    int32    qid = 2;//抢答id
+}

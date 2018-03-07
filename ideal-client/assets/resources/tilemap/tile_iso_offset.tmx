@@ -3,7 +3,7 @@
  <tileset firstgid="1" source="tile_iso_offset.tsx"/>
  <layer name="baseLayer" width="10" height="10">
   <data encoding="base64" compression="zlib">
-   eJxjYmBgYCISM+PB6Opw6cfGZ0HCID4jkeoosZcYfwwEBgC90ADp
+   eJxjYmBgYCISM+PB6Opw6cfGZ0HCID4jkeoosZcYf9AbgwAAvcgA5w==
   </data>
  </layer>
 </map>

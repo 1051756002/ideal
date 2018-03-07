@@ -5,6 +5,7 @@ cc.Class({
         spine: sp.Skeleton,
         bone: dragonBones.ArmatureDisplay,
         lblAni: cc.Label,
+        map: cc.TiledMap,
     },
 
     onLoad: function () {

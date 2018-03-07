@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" tiledversion="1.1.2" orientation="isometric" renderorder="right-down" width="10" height="10" tilewidth="100" tileheight="70" infinite="0" nextobjectid="1">
+ <tileset firstgid="1" source="test-1.tsx"/>
+ <tileset firstgid="9" source="tile_iso_offset.tsx"/>
+ <layer name="块层 1" width="10" height="10">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFpAJWIGYGYjYonxMNwwALlGYnYB4jEDMBMQcQAwASdABJ
+  </data>
+ </layer>
+</map>

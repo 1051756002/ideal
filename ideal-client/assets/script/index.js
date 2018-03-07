@@ -5,14 +5,18 @@ cc.Class({
     },
 
     onLoad: function() {
-        let uname = util.getQueryString('uname', util.getCookie('uname'));
-        let token = util.getQueryString('token', util.getCookie('token'));
+        ideal.init(function() {
+            util.log('%-#0fe029', 'ideal framework initialization end.');
 
-        if (util.isDefine(uname) && util.isDefine(token)) {
-            this.valiToken(uname, token);
-        } else {
-            cc.director.loadScene('login');
-        }
+            let uname = util.getQueryString('uname', util.getCookie('uname'));
+            let token = util.getQueryString('token', util.getCookie('token'));
+
+            if (util.isDefine(uname) && util.isDefine(token)) {
+                this.valiToken(uname, token);
+            } else {
+                cc.director.loadScene('login');
+            }
+        }.bind(this));
     },
 
     valiToken: function(uname, token) {

@@ -14,9 +14,11 @@ cc.Class({
                 cc.error(err);
                 return;
             }
-            this.map.tmxAsset = tmxAsset;
+            // this.map.tmxAsset = tmxAsset;
         }.bind(this));
 
         window.kk = this;
+
+        util.log('game.js');
     },
 });
