@@ -29,7 +29,8 @@ let listen = function(client) {
 	// 用户断线
 	client.on('close', function() {
 		// service.call(client, new Buffer([2, 1, 5]));
-		util.log('disconn', client);
+		util.log('disconn');
+		// util.log(client);
 	});
 };
 
@@ -42,7 +43,6 @@ network.init = function(callback) {
 		server: server,
 		verifyClient: require('./verify'),
 	});
-
 	wss.on('connection', listen);
 
 	util.log('%-green', '  ServerUrl: ws://%s:%d', config.server[1].address, config.server[1].port);

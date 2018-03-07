@@ -8,14 +8,14 @@ cc.Class({
         ideal.init(function() {
             util.log('%-#0fe029', 'ideal framework initialization end.');
 
-            let uname = util.getQueryString('uname', util.getCookie('uname'));
-            let token = util.getQueryString('token', util.getCookie('token'));
+            // let uname = util.getQueryString('uname', util.getCookie('uname'));
+            // let token = util.getQueryString('token', util.getCookie('token'));
 
-            if (util.isDefine(uname) && util.isDefine(token)) {
-                this.valiToken(uname, token);
-            } else {
-                cc.director.loadScene('login');
-            }
+            // if (util.isDefine(uname) && util.isDefine(token)) {
+            //     this.valiToken(uname, token);
+            // } else {
+            //     cc.director.loadScene('login');
+            // }
         }.bind(this));
     },
 

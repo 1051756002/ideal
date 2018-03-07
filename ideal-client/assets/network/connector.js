@@ -34,7 +34,7 @@ connector.connect = function() {
 		});
 	}.bind(this);
 
-	openSocket(config.server.url, openFn, closeFn);
+	openSocket(config.server[1].url, openFn, closeFn);
 	return true;
 };
 
@@ -43,7 +43,7 @@ let reconn = 0;
 // 重连
 connector.reconnect = function() {
 	reconn++;
-	if (reconn > config.server.reconnLimit) {
+	if (reconn > config.server[1].reconnLimit) {
 		reconn = 0;
 		this.error({
 			msg: '与服务器断开了！',
@@ -51,7 +51,7 @@ connector.reconnect = function() {
 		return;
 	}
 
-	util.log(util.format('第{1}/{2}次尝试重连...', reconn, config.server.reconnLimit));
+	util.log(util.format('第{1}/{2}次尝试重连...', reconn, config.server[1].reconnLimit));
 	this.state = SocketState.Connecting;
 };
 
@@ -174,7 +174,7 @@ connector.off = function(types, selector) {
 let openSocket = function(serverUrl, onOpen, onClose, onError) {
 	closeSocket(function() {
 		try {
-			let socket = new WebSocket(serverUrl);
+			let socket = connector.socket = new WebSocket(serverUrl);
 			socket.binaryType = 'arraybuffer';
 			socket.onopen = function(evt) {
 				onOpen && onOpen(evt);
@@ -251,7 +251,43 @@ let receiveMsg = function(buffer) {
 	}
 };
 
+// 初始化网络
+connector.init = function(callback) {
+	if (this.state != SocketState.Waiting) {
+		util.warn('网络正在运作, 无需初始化.');
+		util.isDefine(callback) && callback();
+		return;
+	}
 
+	this.state = SocketState.Connecting;
+
+	// 连接成功
+	let openFn = function(ev) {
+		// this.send('login', ideal.param.platform);
+		util.isDefine(callback) && callback();
+	}.bind(this);
+
+	// 连接中断
+	let closeFn = function(ev) {
+		this.error({
+			msg: '与服务器断开了！',
+			callback: this.reconnect.bind(this)
+		});
+	}.bind(this);
+
+	// 连接异常
+	let errorFn = function(ev) {
+		util.log(ev);
+		this.error({
+			msg: '连接异常！',
+		});
+	}.bind(this);
+
+	let server = config.server[1];
+	let surl = util.format('ws://{1}:{2}', server.address, server.port);
+
+	openSocket(surl, openFn, closeFn, errorFn);
+};
 
 // 通讯状态赋到连接器中，方便外界用于判断
 for (let i in SocketState) {

@@ -2,6 +2,8 @@ let config = {};
 
 // 是否为开发模式
 config.debug = true;
+// 是否在启动框架前清除日志
+config.clearlog = true;
 // 客户端版本号
 config.version = '0.0.1';
 // 服务器配置
