@@ -45,12 +45,13 @@ function encoderImage(imgpath) {
 	var prefix = match[1];
 	var filename = match[2];
 	var jsonpath = util.format('{1}{2}.json', prefix, filename);
-
-	// 读取配置文件
-	fs.readFile(jsonpath, 'utf-8', function(err, data) {
-		if (err) throw err;
-		doJson(JSON.parse(data), prefix, filename);
-	});
+	if (fs.existsSync(jsonpath)) {
+		// 读取配置文件
+		fs.readFile(jsonpath, 'utf-8', function(err, data) {
+			if (err) throw err;
+			doJson(JSON.parse(data), prefix, filename);
+		});
+	}
 }
 
 function mkdirs(dirpath, mode, callback) {
