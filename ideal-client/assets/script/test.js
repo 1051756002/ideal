@@ -27,9 +27,26 @@ cc.Class({
         }
         for (let i = 2; i <= 3; i++) {
             for (let j = 1; j <= 6; j++) {
-                this.bone_list.push(j + '-' + i + '_x');
+            this.bone_list.push(j + '-' + i + '_x');
             }
         }
+        // this.bone_list = [
+        //     "idle_zheng_1",
+        //     "happy_zheng_1",
+        //     "idle_zheng_2",
+        //     "happy_zheng_2",
+        //     "happy_zheng_3",
+        //     "idle_zheng_3",
+        //     "sleep_zheng_1",
+        //     "happy_bei_1",
+        //     "happy_bei_2",
+        //     "happy_bei_3",
+        //     "idle_bei_1",
+        //     "idle_bei_2",
+        //     "idle_bei_3",
+        //     "attacked_bei_1",
+        //     "attacked_bei_2",
+        //     "attacked_bei_3","attacked_zheng_1","attacked_zheng_2","attacked_zheng_3","sleep_zheng_2","sleep_zheng_3","sleep_bei_1","sleep_bei_2","sleep_bei_3"];
     },
 
     onToggleAni: function() {

@@ -45,7 +45,7 @@
     "_globalZOrder": 0,
     "_opacityModifyRGB": false,
     "groupIndex": 0,
-    "autoReleaseAssets": false
+    "autoReleaseAssets": null
   },
   {
     "__type__": "cc.Node",
@@ -184,7 +184,7 @@
     "loop": true,
     "_premultipliedAlpha": false,
     "_N$skeletonData": {
-      "__uuid__": "bdc057fd-9ad1-4e2f-a4ae-3a925dcbdb76"
+      "__uuid__": "d4a68ddd-af26-4357-9b02-9c736a295bfe"
     },
     "_N$timeScale": 1,
     "_N$debugSlots": false,
@@ -199,7 +199,7 @@
     },
     "_children": [],
     "_tag": -1,
-    "_active": false,
+    "_active": true,
     "_components": [
       {
         "__id__": 6
@@ -250,11 +250,15 @@
       "__id__": 5
     },
     "_enabled": true,
-    "_armatureName": "",
+    "_armatureName": "dice_roll2",
     "_animationName": "",
     "playTimes": -1,
-    "_N$dragonAsset": null,
-    "_N$dragonAtlasAsset": null,
+    "_N$dragonAsset": {
+      "__uuid__": "9eed7250-bf6e-43c7-a10d-b1108a66d09f"
+    },
+    "_N$dragonAtlasAsset": {
+      "__uuid__": "bd701dea-1fe1-4315-8c0d-229e96161680"
+    },
     "_N$_defaultArmatureIndex": 0,
     "_N$_animationIndex": 0,
     "_N$timeScale": 1,
@@ -550,12 +554,6 @@
     },
     "duration": 0.1,
     "zoomScale": 1.2,
-    "pressedSprite": {
-      "__uuid__": "e9ec654c-97a2-4787-9325-e6a10375219a"
-    },
-    "hoverSprite": {
-      "__uuid__": "e9ec654c-97a2-4787-9325-e6a10375219a"
-    },
     "clickEvents": [
       {
         "__id__": 15
@@ -580,6 +578,18 @@
     "_N$normalSprite": {
       "__uuid__": "f0048c10-f03e-4c97-b9d3-3506e1d58952"
     },
+    "_N$pressedSprite": {
+      "__uuid__": "e9ec654c-97a2-4787-9325-e6a10375219a"
+    },
+    "pressedSprite": {
+      "__uuid__": "e9ec654c-97a2-4787-9325-e6a10375219a"
+    },
+    "_N$hoverSprite": {
+      "__uuid__": "e9ec654c-97a2-4787-9325-e6a10375219a"
+    },
+    "hoverSprite": {
+      "__uuid__": "e9ec654c-97a2-4787-9325-e6a10375219a"
+    },
     "_N$disabledSprite": {
       "__uuid__": "29158224-f8dd-4661-a796-1ffab537140e"
     },
@@ -593,7 +603,7 @@
       "__id__": 2
     },
     "component": "test",
-    "handler": "onToggleAni",
+    "handler": "onToggleBone",
     "customEventData": ""
   },
   {
