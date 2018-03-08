@@ -4,6 +4,7 @@ cc.Class({
     properties: {
         map: cc.TiledMap,
         sheep: cc.Node,
+        chess: dragonBones.ArmatureDisplay,
     },
 
     onLoad: function () {
@@ -14,7 +15,9 @@ cc.Class({
                 cc.error(err);
                 return;
             }
-            // this.map.tmxAsset = tmxAsset;
+            if (this.map) {
+                this.map.tmxAsset = tmxAsset;
+            }
         }.bind(this));
 
         window.kk = this;

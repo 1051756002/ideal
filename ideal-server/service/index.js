@@ -7,16 +7,11 @@ let service = {
 	_source: {},
 };
 
-let serviceList = [];
-for (let k in service) {
-	serviceList.push(service[k]);
-};
-
 // 发送指令
 service.send = function(type, data) {
 	let exist = false;
-	for (let i = 0; i < serviceList.length; i++) {
-		exist = serviceList[i].send(type, data);
+	for (let i in this._source) {
+		exist = this._source[i].send(type, data);
 		if (exist) { break; }
 	}
 
@@ -27,9 +22,11 @@ service.send = function(type, data) {
 
 // 解析消息
 service.parseMsg = function(mainCmd, subCmd, bodyBuff) {
+	util.logat('%-gray', '  Main: {1}, Sub: {2}', mainCmd, subCmd);
+
 	let exist = false;
-	for (let i = 0; i < serviceList.length; i++) {
-		exist = serviceList[i].parseMsg(mainCmd, subCmd, bodyBuff);
+	for (let i in this._source) {
+		exist = this._source[i].parseMsg(mainCmd, subCmd, bodyBuff);
 		if (exist) { break; }
 	}
 
@@ -56,8 +53,8 @@ service.init = function(callback) {
 		// 重定义文件名, 且用来做业务键值
 		let fname = arr.join('.');
 
-		// 过滤掉自身文件
-		if (fname == 'index.js') {
+		// 过滤掉非法格式的文件
+		if (/^service-.*\.js$/.test(fname) == false) {
 			return;
 		}
 

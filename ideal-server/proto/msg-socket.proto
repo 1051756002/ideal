@@ -1,3 +1,6 @@
+import "msg-socket-login.proto";
+import "msg-socket-game.proto";
+
 // 回馈结果
 // [服务端发送, 组合]
 message S_Result_Msg {

@@ -9,13 +9,14 @@
 		"login": "node login.js"
 	},
 	"dependencies": {
+		"1.1.1": "^1.0.0",
 		"md5": "^2.2.1",
 		"mongodb": "^3.0.3",
 		"mssql": "^4.1.0",
 		"node-uuid": "^1.4.8",
 		"protobufjs": "^6.8.4",
 		"walkdir": "0.0.12",
-		"ws": "^4.0.0"
+		"ws": "^1.1.1"
 	},
 	"devDependencies": {
 		"chalk": "^2.0.1"

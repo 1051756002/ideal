@@ -4,7 +4,9 @@
  */
 let service = {
 	// 登录模块
-	login: require('./service-login')
+	login: require('./service-login'),
+	// 业务模块
+	game: require('./service-game'),
 };
 
 let serviceList = [];
@@ -13,10 +15,10 @@ for (let k in service) {
 };
 
 // 发送指令
-service.send = function(type, data) {
+service.sendMsg = function(type, data) {
 	let exist = false;
 	for (let i = 0; i < serviceList.length; i++) {
-		exist = serviceList[i].send(type, data);
+		exist = serviceList[i].sendMsg(type, data);
 		if (exist) { break; }
 	}
 

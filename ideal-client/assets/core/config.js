@@ -35,9 +35,6 @@ config.notlog_send = [0];
 // proto文件列表
 config.protolist = [
 	'./res/raw-assets/resources/proto/msg-socket.proto',
-	'./res/raw-assets/resources/proto/msg-socket-login.proto',
-	'./res/raw-assets/resources/proto/msg-socket-game.proto',
-	'./res/raw-assets/resources/proto/MsgSocketProtoBean.proto'
 ];
 
 module.exports = config;

@@ -20,7 +20,14 @@ let loadNext = function(idx = 0, callback = null) {
 			util.log(err);
 			return;
 		}
-		protobuf[fname] = root;
+		
+		// field加入到protobuf中
+		for (let i in root) {
+			if (/^[C|S]_[a-z|A-Z|0-9|_]*Msg$/.test(i)) {
+				protobuf[i] = root[i];
+			}
+		}
+
 		util.logat('%-#999999', '- loaded file: {1}', path);
 		util.logat('%-#999999', '  define as {1}', fname);
 		loadNext(idx + 1, callback);

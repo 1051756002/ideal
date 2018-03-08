@@ -1,36 +1,42 @@
 let network = {};
+let lowerLen = 6;
+let __head = [1005];
 
 // 通讯监听
 let listen = function(client) {
 	// 分发指令
-	client.on('message', function(buffer) {
-		// service.call(client, buffer);
-		util.log('recv: ', buffer);
-
-		if (!buffer instanceof ArrayBuffer) {
-			util.log('不是正确格式');
+	client.on('message', function(uint8) {
+		if (uint8 instanceof Uint8Array == false) {
+			util.log('Incorrect format.');
 			return;
 		}
 
-		// 消息头部
-		let msgHead = new Uint8Array(buffer, 0, 2);
-		// 消息命令部分
-		let msgCmd = new Uint16Array(buffer, 2, 4);
-		// 消息参数
-		let msgBody = new Uint8Array(buffer, 10);
+		if (uint8.byteLength < lowerLen) {
+			util.log('Incorrect format 2.');
+			return;
+		}
 
-		let mainCmd = msgCmd[2];
-		let subCmd = msgCmd[3];
-		let bodyBuff = new Uint8Array(msgBody);
+		let buffer = new ArrayBuffer(uint8.byteLength);
+		new Uint8Array(buffer).set(uint8);
 
-		util.log('mainCmd: {1}, subCmd: {2}', mainCmd, subCmd);
+		let head = new Uint16Array(buffer, 0, 1);
+		let cmds = new Uint16Array(buffer, 2, 2);
+		let body = new Uint8Array(buffer, lowerLen);
+
+		if (head[0] != __head[0]) {
+			util.log('Incorrect format 3.')
+			return;
+		}
+		service.parseMsg(cmds[0], cmds[1], body);
 	});
 
 	// 用户断线
 	client.on('close', function() {
-		// service.call(client, new Buffer([2, 1, 5]));
-		util.log('disconn');
-		// util.log(client);
+		util.logat('%-gray', '  disconnect inc: {1}', client.upgradeReq.incUid);
+	});
+
+	client.on('error', function(err) {
+		util.logat('%-red', '  Error: {1}', err);
 	});
 };
 

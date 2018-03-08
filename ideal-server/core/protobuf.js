@@ -21,14 +21,15 @@ let loadNext = function(idx = 0, callback = null) {
 			return;
 		}
 
-		util.logat('%-gray', '  - loaded file: {1}', path);
-
-		if (util.isEmpty(protobuf[fname])) {
-			protobuf[fname] = root;
-			util.logat('%-gray', '    define as {1}', fname);
-		} else {
-			util.logat('%-yellow', '  - define as {1}, but it has already existed', fname);
+		// field加入到protobuf中
+		for (let i in root) {
+			if (/^[C|S]_[a-z|A-Z|0-9|_]*Msg$/.test(i)) {
+				protobuf[i] = root[i];
+			}
 		}
+
+		util.logat('%-gray', '  - loaded file: {1}', path);
+		util.logat('%-gray', '    define as {1}', fname);
 		loadNext(idx + 1, callback);
 	});
 };

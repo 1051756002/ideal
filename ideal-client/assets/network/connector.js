@@ -19,25 +19,6 @@ let connector = {
 	state: SocketState.Waiting,
 };
 
-// 连接服务器
-connector.connect = function() {
-	this.state = SocketState.Connecting;
-
-	let openFn = function(ev) {
-		// this.send('login', ideal.param.platform);
-	}.bind(this);
-
-	let closeFn = function(ev) {
-		this.error({
-			msg: '与服务器断开了！',
-			callback: this.reconnect.bind(this)
-		});
-	}.bind(this);
-
-	openSocket(config.server[1].url, openFn, closeFn);
-	return true;
-};
-
 // 重连次数
 let reconn = 0;
 // 重连
@@ -57,6 +38,7 @@ connector.reconnect = function() {
 
 // 断开服务器
 connector.interrupt = function(closeSocket) {
+	this.state = SocketState.Disconnect;
 	if (this.state != SocketState.Connected || this.socket.readyState != WebSocket.OPEN) {
 		return false;
 	}
@@ -71,35 +53,29 @@ connector.error = function(err) {
 
 // 向服务器发送消息
 connector.send = function(type, data) {
-	service.send(type, data);
+	service.sendMsg(type, data);
 };
 
 // 向服务器发送消息
-connector.sendMsg = function(mainCmd, subCmd, bodyBuff) {
-	let bufferLen;
-	if (bodyBuff) {
-		bufferLen = bodyBuff.bodyLength + 10;
-	} else {
-		bufferLen = 10;
-	}
-
+connector.sendMsg = function(mainCmd, subCmd, bodyBuff = []) {
+	let lowerLen = 6;
+	let bufferLen = (bodyBuff ? bodyBuff.byteLength : 0) + lowerLen;
 	let buffer = new ArrayBuffer(bufferLen);
-	// 消息头部
-	let msgHead = new Uint8Array(buffer, 0, 2);
-	// 消息命令部分
-	let msgCmd = new Uint16Array(buffer, 2, 4);
-	let msgBody = new Uint8Array(buffer, 10);
-
-	msgHead.set([6, 0]);
-
-	if (this.socket.readyState != WebSocket.OPEN) {
-		throw ({
-			msg: '与服务器连接中断'
-		});
+	// 消息头
+	new Uint16Array(buffer, 0, 1).set([1005]);
+	// 消息命令
+	new Uint16Array(buffer, 2, 2).set([mainCmd, subCmd]);
+	// 消息内容
+	if (bufferLen > lowerLen) {
+		new Uint8Array(buffer, lowerLen).set(bodyBuff);
 	}
 
-	if (config.notlog_send.indexOf(mainCmd) == -1) {
-		util.log(util.format('%c发送: main={1}\tsub={2}\tbodyLen={3}', mainCmd, subCmd, bodyBuff ? bodyBuff.byteLength : 0), 'color:#0fe029');
+	if (this.state != SocketState.Connected) {
+		throw ({ msg: '与服务器连接中断' });
+	}
+
+	if (util.isEmpty(config.notlog_send) || config.notlog_send.indexOf(mainCmd) == -1) {
+		util.log(util.format('%c发送: main={1}\tsub={2}\tbodyLen={3}', mainCmd, subCmd, bufferLen - lowerLen), 'color:#0fe029');
 	}
 
 	this.socket.send(buffer);
@@ -263,12 +239,16 @@ connector.init = function(callback) {
 
 	// 连接成功
 	let openFn = function(ev) {
+		this.state = SocketState.Connected;
 		// this.send('login', ideal.param.platform);
+		util.logat('%-#de590b', 'connect success.');
 		util.isDefine(callback) && callback();
 	}.bind(this);
 
 	// 连接中断
 	let closeFn = function(ev) {
+		this.state = SocketState.Waiting;
+		util.logat('%-#de590b', 'connect interrupt.');
 		this.error({
 			msg: '与服务器断开了！',
 			callback: this.reconnect.bind(this)
@@ -277,7 +257,7 @@ connector.init = function(callback) {
 
 	// 连接异常
 	let errorFn = function(ev) {
-		util.log(ev);
+		util.logat('%-#de590b', 'network error: ' + ev);
 		this.error({
 			msg: '连接异常！',
 		});
@@ -285,6 +265,7 @@ connector.init = function(callback) {
 
 	let server = config.server[1];
 	let surl = util.format('ws://{1}:{2}', server.address, server.port);
+	util.logat('%-#de590b', 'connect server: {1}.', surl);
 
 	openSocket(surl, openFn, closeFn, errorFn);
 };
