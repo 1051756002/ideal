@@ -1,9 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" tiledversion="1.1.2" orientation="isometric" renderorder="right-down" width="10" height="10" tilewidth="100" tileheight="50" infinite="0" nextobjectid="1">
+<map version="1.0" orientation="isometric" renderorder="right-down" width="10" height="10" tilewidth="100" tileheight="50" nextobjectid="1">
  <tileset firstgid="1" source="tile_iso_offset.tsx"/>
  <layer name="baseLayer" width="10" height="10">
   <data encoding="base64" compression="zlib">
-   eJxjYmBgYCISM+PB6Opw6cfGZ0HCID4jkeoosZcYfwwEBgC90ADp
+   eJxjYWBgYBnFgwYDAD0/AZE=
+  </data>
+ </layer>
+ <layer name="roadLayer" width="10" height="10">
+  <data encoding="base64" compression="zlib">
+   eJxjYCAeMBHAyOrwmTEc1RETLsQAAC3AADk=
   </data>
  </layer>
 </map>
