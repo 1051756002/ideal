@@ -1,7 +1,7 @@
 {
   "ver": "1.0.0",
   "uuid": "bd701dea-1fe1-4315-8c0d-229e96161680",
-  "atlasJson": "{\n\t\"width\": 256,\n\t\"SubTexture\": [{\n\t\t\"width\": 70,\n\t\t\"y\": 73,\n\t\t\"height\": 70,\n\t\t\"name\": \"2\",\n\t\t\"x\": 1\n\t}, {\n\t\t\"width\": 70,\n\t\t\"y\": 145,\n\t\t\"height\": 70,\n\t\t\"name\": \"3\",\n\t\t\"x\": 1\n\t}, {\n\t\t\"width\": 70,\n\t\t\"y\": 73,\n\t\t\"height\": 70,\n\t\t\"name\": \"6\",\n\t\t\"x\": 73\n\t}, {\n\t\t\"width\": 70,\n\t\t\"y\": 1,\n\t\t\"height\": 70,\n\t\t\"name\": \"5\",\n\t\t\"x\": 145\n\t}, {\n\t\t\"width\": 70,\n\t\t\"y\": 1,\n\t\t\"height\": 70,\n\t\t\"name\": \"4\",\n\t\t\"x\": 73\n\t}, {\n\t\t\"width\": 70,\n\t\t\"y\": 1,\n\t\t\"height\": 70,\n\t\t\"name\": \"1\",\n\t\t\"x\": 1\n\t}],\n\t\"height\": 256,\n\t\"name\": \"dice_roll2\",\n\t\"imagePath\": \"dice_roll2_tex.png\"\n}",
+  "atlasJson": "{\r\n\t\"width\": 256,\r\n\t\"SubTexture\": [{\r\n\t\t\"width\": 70,\r\n\t\t\"y\": 73,\r\n\t\t\"height\": 70,\r\n\t\t\"name\": \"2\",\r\n\t\t\"x\": 1\r\n\t}, {\r\n\t\t\"width\": 70,\r\n\t\t\"y\": 145,\r\n\t\t\"height\": 70,\r\n\t\t\"name\": \"3\",\r\n\t\t\"x\": 1\r\n\t}, {\r\n\t\t\"width\": 70,\r\n\t\t\"y\": 73,\r\n\t\t\"height\": 70,\r\n\t\t\"name\": \"6\",\r\n\t\t\"x\": 73\r\n\t}, {\r\n\t\t\"width\": 70,\r\n\t\t\"y\": 1,\r\n\t\t\"height\": 70,\r\n\t\t\"name\": \"5\",\r\n\t\t\"x\": 145\r\n\t}, {\r\n\t\t\"width\": 70,\r\n\t\t\"y\": 1,\r\n\t\t\"height\": 70,\r\n\t\t\"name\": \"4\",\r\n\t\t\"x\": 73\r\n\t}, {\r\n\t\t\"width\": 70,\r\n\t\t\"y\": 1,\r\n\t\t\"height\": 70,\r\n\t\t\"name\": \"1\",\r\n\t\t\"x\": 1\r\n\t}],\r\n\t\"height\": 256,\r\n\t\"name\": \"dice_roll2\",\r\n\t\"imagePath\": \"dice_roll2_tex.png\"\r\n}",
   "texture": "b4d87da1-954d-46af-ae16-aee38f3d0190",
   "subMetas": {}
 }

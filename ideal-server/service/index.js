@@ -10,8 +10,8 @@ let service = {
 // 发送指令
 service.send = function(type, data) {
 	let exist = false;
-	for (let i in this._source) {
-		exist = this._source[i].send(type, data);
+	for (let i = 0; i < serviceList.length; i++) {
+		exist = serviceList[i].send(type, data);
 		if (exist) { break; }
 	}
 
